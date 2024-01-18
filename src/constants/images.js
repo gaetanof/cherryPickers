@@ -1,3 +1,9 @@
+// cherry pickers fotos
+
+
+
+
+
 import bg from '../assets/bg.png';
 import chef from '../assets/chef.png';
 import G from '../assets/G.png';

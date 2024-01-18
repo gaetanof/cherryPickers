@@ -16,27 +16,12 @@ const Navbar = () => {
           <a href="#home">Home</a>
         </li>
         <li className="p__opensans">
-          <a href="#about">About</a>
+          <a href="#about">Quienes Somos?</a>
         </li>
         <li className="p__opensans">
-          <a href="#menu">Menu</a>
-        </li>
-        <li className="p__opensans">
-          <a href="#awards">Awards</a>
-        </li>
-        <li className="p__opensans">
-          <a href="#contact">Contact</a>
+          <a href="#contact">Contacto</a>
         </li>
       </ul>
-      <div className="app__navbar-login">
-        <a href="#login" className="p__opensans">
-          Log In / Registration
-        </a>
-        <div />
-        <a href="/" className="p__opensans">
-          Book Table
-        </a>
-      </div>
       <div className="app__navbar-smallscreen">
         <GiHamburgerMenu
           color="#fff"
@@ -59,16 +44,6 @@ const Navbar = () => {
               <li>
                 <a href="#about" onClick={() => setToggleMenu(false)}>
                   About
-                </a>
-              </li>
-              <li>
-                <a href="#menu" onClick={() => setToggleMenu(false)}>
-                  Menu
-                </a>
-              </li>
-              <li>
-                <a href="#awards" onClick={() => setToggleMenu(false)}>
-                  Awards
                 </a>
               </li>
               <li>
