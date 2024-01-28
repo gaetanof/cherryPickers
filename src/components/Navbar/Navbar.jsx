@@ -1,6 +1,6 @@
 import React from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { MdOutlineRestaurantMenu } from 'react-icons/md';
+import { GoHomeFill } from 'react-icons/go';
 import images from '../../constants/images';
 import './Navbar.css';
 
@@ -9,46 +9,44 @@ const Navbar = () => {
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
-        <img src={images.gericht} alt="app__logo" />
+        <img src={images.cherryPickersLogo} alt="app__logo" />
       </div>
       <ul className="app__navbar-links">
-        <li className="p__opensans">
+        <li className="p__fraunces">
           <a href="#home">Home</a>
         </li>
-        <li className="p__opensans">
-          <a href="#about">Quienes Somos?</a>
+        <li className="p__fraunces">
+          <a href="#about">Quienes somos?</a>
         </li>
-        <li className="p__opensans">
+        <li className="p__fraunces">
           <a href="#contact">Contacto</a>
         </li>
       </ul>
       <div className="app__navbar-smallscreen">
         <GiHamburgerMenu
-          color="#fff"
-          fontSize={27}
+          className="hamburgerMenu"
           onClick={() => setToggleMenu(true)}
         />
         {toggleMenu && (
-          <div className="app__navbar-smallscreen_overlay flex__center slide-bottom">
-            <MdOutlineRestaurantMenu
-              fontSize={27}
-              className="overlay__close"
+          <div className="app__navbar-smallscreen_overlay">
+            <GoHomeFill
+              className="homeMenu"
               onClick={() => setToggleMenu(false)}
             />
             <ul className="app__navbar-smallscreen_links">
-              <li>
+              <li className="p_fraunces">
                 <a href="#home" onClick={() => setToggleMenu(false)}>
                   Home
                 </a>
               </li>
-              <li>
+              <li className="p_fraunces">
                 <a href="#about" onClick={() => setToggleMenu(false)}>
-                  About
+                  Quienes somos?
                 </a>
               </li>
-              <li>
+              <li className="p_fraunces">
                 <a href="#contact" onClick={() => setToggleMenu(false)}>
-                  Contact
+                  Contacto
                 </a>
               </li>
             </ul>

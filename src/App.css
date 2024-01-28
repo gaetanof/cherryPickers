@@ -67,23 +67,21 @@
     cursor: pointer;
 }
 
-.p__cormorant {
+.p__fraunces {
   font-family: var(--font-base);
   color: var(--color-white);
   font-weight: 700;
   letter-spacing: 0.04em;
-  text-transform: capitalize;
   font-feature-settings: 'tnum' on, 'lnum' on;
   line-height: 29.9px;
   font-size: 23px;
 }
 
-.p__opensans {
+.p__raleway {
   font-family: var(--font-alt);
   color: var(--color-white);
   font-weight: 400;
   letter-spacing: 0.04em;
-  text-transform: capitalize;
   line-height: 28px;
   font-size: 16px;
 }
@@ -94,7 +92,6 @@
   font-size: 64px;
   line-height: 83.2px;
   letter-spacing: 0.04em;
-  text-transform: capitalize;
 }
 
 .spoon__img {
@@ -103,12 +100,12 @@
 
 @media screen and (min-width: 2000px) {
   .custom__button,
-  .p__cormorant {
+  .p__fraunces {
     font-size: 37px;
     line-height: 67px;
   }
 
-  .p__opensans {
+  .p__raleway {
     font-size: 30px;
     line-height: 50px;
   }
@@ -152,21 +149,21 @@
     padding: 4rem 2rem;
   }
   
-  .p__cormorant {
+  .p__fraunces {
     font-size: 21px;
   }
 
-  .p__opensans {
+  .p__raleway {
     font-size: 14px;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .p__opensans {
+  .p__raleway {
     font-size: 12px;
   }
 
-  .p__cormorant {
+  .p__fraunces {
     font-size: 19px;
   }
 
