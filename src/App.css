@@ -20,7 +20,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   min-height: 100vh;
 }
 
@@ -93,10 +92,6 @@
   letter-spacing: 0.04em;
 }
 
-.spoon__img {
-  width: 45px;
-}
-
 @media screen and (min-width: 2000px) {
   .custom__button,
   .p__fraunces {
@@ -155,6 +150,10 @@
   .p__raleway {
     font-size: 14px;
   }
+  .app__bg{
+    background-attachment: scroll; /* Desactivar el fondo fijo en dispositivos móviles */
+  }
+  
 }
 
 @media screen and (max-width: 450px) {

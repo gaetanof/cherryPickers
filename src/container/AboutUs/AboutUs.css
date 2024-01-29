@@ -1,5 +1,37 @@
 .app__aboutus {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+}
+.app__aboutus-content{
+  margin: 2rem;
+}
+.app__aboutUs-h1 {
+  font-family: var(--font-alt);
+  color: var(--color-petroleo);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 117px;
+  font-size: 4rem;
+  text-align: center !important;
+}
+
+.aboutUs-text{
+  color: var(--color-black) !important;
+  font-size: 2rem !important;
+  font-weight: 600 !important;
+  text-align: justify;
+  line-height: 3rem !important;
+  padding:2rem;
+}
+
+.aboutUs-text-back {
+  background-color: rgba(255, 255, 255, 0.6); /* Fondo blanco con 80% de opacidad */
+  padding: 5rem 8rem;
+  border-radius: 30px;
+  display: inline-block;
 }
 
 .app__aboutus-overlay {
@@ -7,57 +39,18 @@
   inset: 0;
 }
 
-.app__aboutus-overlay img {
-  width: 391px;
-  height: 415px;
-  z-index: 0;
-}
-
-.app__aboutus-content {
-  width: 100%;
-  z-index: 2;
-}
-
-.app__aboutus-content_about {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  flex-direction: column;
-
-  text-align: right;
-}
-
-.app__aboutus-content_knife {
-  margin: 2rem 4rem;
-}
-
-.app__aboutus-content_knife img {
-  height: 910px;
-}
-
 .app__aboutus-content_history {
   flex: 1;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
   flex-direction: column;
-
-  text-align: left;
 }
 
-.app__aboutus-content_about p,
 .app__aboutus-content_history p {
   margin: 2rem 0;
-  color: var(--color-grey);
 }
 
 @media screen and (min-width: 2000px) {
-  .app__aboutus-content_knife img {
-      height: 1110px;
-  }
-
-  .app__aboutus-content_about p,
   .app__aboutus-content_history p {
       margin: 4rem 0;
   }
@@ -67,15 +60,23 @@
   .app__aboutus-content {
       flex-direction: column;
   }
-
-  .app__aboutus-content_knife {
-      margin: 4rem 0;
-  }
 }
 
 @media screen and (max-width: 650px) {
-  .app__aboutus-overlay img {
-      width: 80%;
-      height: 320px;
+  .aboutUs-text-back {
+    padding: 0;
+  }
+  .aboutUs-text{
+    font-size: 1.5rem !important;
+    font-weight: 450 !important;
+    text-align: left;
+    line-height: 2.5rem !important;
+    padding:1rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .app__aboutus-content{
+    margin: 0
   }
 }

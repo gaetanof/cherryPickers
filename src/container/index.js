@@ -13,5 +13,4 @@ export {
   Footer,
   Gallery,
   Header,
-
 };
