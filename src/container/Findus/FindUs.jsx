@@ -1,37 +1,13 @@
 import React from 'react';
-
-import { images } from '../../constants';
+import './FindUs.css';
 
 const FindUs = () => (
-  <div className="app__bg app__wrapper section__padding" id="contact">
-    <div className="app__wrapper_info">
-      <h1 className="headtext__cormorant" style={{ marginBottom: '3rem' }}>
-        Find Us
-      </h1>
-      <div className="app__wrapper-content">
-        <p className="p__raleway">
-          Lane Ends Bungalow, Whatcroft Hall Lane, Rudheath, CW9 75G
-        </p>
-        <p
-          className="p__fraunces"
-          style={{ color: '#DCCA87', margin: '2rem 0' }}
-        >
-          Opening Hours
-        </p>
-        <p className="p__raleway">Mon - Fri: 10:00 am - 02:00 am</p>
-        <p className="p__raleway">Sat - Sun: 10:00 am - 03:00 am</p>
+  <div className="app__FindUs app__bg flex__center section__padding" id="about">
+    <div className="app__FindUs-content flex__center">
+      <div className="app__FindUs-content_history FindUs-text-back">
+        <h1 className="app__FindUs-h1 FindUs-title">Contacto</h1>
+        <p className="p__raleway FindUs-text">insertar texto</p>
       </div>
-      <button
-        type="button"
-        className="custom__button"
-        style={{ marginTop: '2rem' }}
-      >
-        Visit Us
-      </button>
-    </div>
-
-    <div className="app__wrapper_img">
-      <img src={images.findus} alt="finus_img" />
     </div>
   </div>
 );

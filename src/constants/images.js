@@ -15,7 +15,6 @@ import gallery04 from '../assets/gallery04.png';
 import logo from '../assets/logo.png';
 import menu from '../assets/menu.png';
 import overlaybg from '../assets/overlaybg.png';
-import findus from '../assets/findus.png';
 import laurels from '../assets/laurels.png';
 import award01 from '../assets/award01.png';
 import award02 from '../assets/award02.png';
@@ -37,7 +36,6 @@ export default {
   logo,
   menu,
   overlaybg,
-  findus,
   laurels,
   award01,
   award02,
