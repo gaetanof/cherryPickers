@@ -2,9 +2,10 @@
 import cherryPickers from '../assets/cherryPickers.jpg';
 import cherryPickersLogo from '../assets/cherryPickersLogo.png';
 import welcomeCherryPickers from '../assets/welcomeCherryPickers.png';
-
-
-
+import servicesConsult from '../assets/servicesConsulting.jpg';
+import servicesCleaning from '../assets/servicesCleaning.jpg';
+import servicesCustomer from '../assets/servicesCustomer.jpg';
+import servicesBooking from '../assets/servicesBooking.jpg';
 
 import bg from '../assets/bg.png';
 import chef from '../assets/chef.png';
@@ -46,4 +47,8 @@ export default {
   cherryPickers,
   cherryPickersLogo,
   welcomeCherryPickers,
+  servicesConsult,
+  servicesCleaning,
+  servicesCustomer,
+  servicesBooking,
 };

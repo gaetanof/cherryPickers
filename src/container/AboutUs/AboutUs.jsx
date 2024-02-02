@@ -8,7 +8,7 @@ const AboutUs = () => (
   >
     <div className="app__aboutus-content flex__center">
       <div className="app__aboutus-content_history aboutUs-text-back">
-        <h1 className="app__aboutUs-h1 aboutUs-title">Quienes somos?</h1>
+        <h1 className="app__aboutUs-h1">Quienes somos?</h1>
         <p className="p__raleway aboutUs-text">
           Somos una agencia especializada en la gestión integral de alquileres
           temporales de propiedades en Buenos Aires - Argentina. Nuestro enfoque

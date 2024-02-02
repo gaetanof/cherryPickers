@@ -1,5 +1,4 @@
 .app__header {
-  background-color: var(--color-black);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,7 +7,7 @@
 
 .app__header-h1 {
   font-family: var(--font-base);
-  color: var(--color-softbrown);
+  color: var(--color-petroleo);
   font-weight: 600;
   letter-spacing: 0.03em;
   line-height: 117px;
