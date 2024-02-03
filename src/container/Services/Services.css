@@ -9,7 +9,7 @@ section__padding_cards{ padding-top:1rem ;
 
 .services-card{
   width: 100%;
-  margin:30px;
+  margin:25px;
   border-radius: 30px;
   overflow:hidden;
   background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con 80% de opacidad */
@@ -39,7 +39,7 @@ section__padding_cards{ padding-top:1rem ;
 
 .services-card ul{
   font-family: var(--font-alt);
-  font-size: 0.7rem;
+  font-size: 1rem;
   padding: 1rem;
   list-style-type: circle;
 }

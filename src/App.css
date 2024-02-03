@@ -150,9 +150,7 @@
   .p__raleway {
     font-size: 14px;
   }
-  .app__bg{
-    background-attachment: scroll; /* Desactivar el fondo fijo en dispositivos móviles */
-  }
+
   
 }
 

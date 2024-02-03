@@ -3,7 +3,7 @@ import './Services.css';
 import images from '../../constants/images';
 
 const Services = () => (
-  <div class="app__bg flex__center section__padding_cards">
+  <div class="app__bg flex__center section__padding_cards" id="services">
     <div class="container-cards">
       <div class="services-card">
         <img src={images.servicesConsult} alt="app__logo" />

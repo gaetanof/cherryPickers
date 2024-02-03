@@ -1,10 +1,13 @@
 .app__navbar {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--color-petroleo);
-  padding: 1rem 2rem;
+  background: var(--color-grey);
+  border-radius: 30px;
+  margin: 10px;
+}
+
+.section__padding_navbar{
+  padding:1rem;
 }
 
 .app__navbar-logo {
@@ -14,7 +17,8 @@
 }
 
 .app__navbar-logo img {
-  width: 120px;
+  width: 100px;
+  padding:5px;
 }
 
 .app__navbar-links {
@@ -29,11 +33,12 @@
   margin: 0 4rem;
   cursor: pointer;
 }
-.app__navbar-links li.p__fraunces {
-  color: var(--color-softbrown);
-  font-weight: 500;
+.app__navbar-links li {
+  font-family: var(--font-alt);
+  color: var(--color-white);
+  font-weight: 600;
   letter-spacing: 0.06em;
-  font-size: 2rem;
+  font-size: 1rem !important;
 }
 
 .app__navbar-links li:hover {
@@ -51,7 +56,7 @@
   padding: 1rem 2rem;
   width: 100%;
   height: 100vh;
-  background: var(--color-petroleo);
+  background: var(--color-black);
 }
 
 .app__navbar-smallscreen_links {
@@ -63,10 +68,10 @@
   margin: 2rem;
   margin-top: 4rem;
   cursor: pointer;
-  color: var(--color-softbrown);
+  color: var(--color-white);
   font-size: 1.5rem;
   text-align: left;
-  font-family: var(--font-base);
+  font-family: var(--font-alt);
 }
 
 .app__navbar-smallscreen_links li:hover {
@@ -87,21 +92,6 @@
   .app__navbar-smallscreen {
       display: flex;
   }
-
-  .hamburgerMenu{
-    color: var(--color-brown);
-    font-size: 30px;
-    margin-right: 0.7rem;
-  }
-
-  .homeMenu {
-    color: var(--color-brown);
-    font-size: 30px;
-    position: fixed;
-    top: 3rem;
-    right: 1rem;
-    margin-right: 0.7rem;
-  }
   
 }
 
@@ -109,8 +99,34 @@
   .app__navbar {
       padding: 1rem;
   }
-
   .app__navbar-logo img {
       width: 100px;
+  }
+  .app__navbar {
+    border-radius: 0px;
+    border-bottom-left-radius: 30px;
+    margin:0px;
+  }
+  .section__padding_navbar{
+    padding:0rem;
+  }
+
+  .hamburgerMenu{
+    color: var(--color-white);
+    font-size: 30px;
+    position: fixed;
+    top: 3rem;
+    right: 1rem;
+    margin-right: 0.7rem;
+    border-radius: 1rem;
+  }
+
+  .homeMenu {
+    color: var(--color-white);
+    font-size: 30px;
+    position: fixed;
+    top: 3rem;
+    right: 1rem;
+    margin-right: 0.7rem;
   }
 }
