@@ -8,7 +8,7 @@ import cors from "cors";
 const corsOptions = {
   origin: "http://127.0.0.1:5173", // specify the allowed origin
   methods: ["POST", "GET"], // specify the allowed methods
-  credentials: true, // allow sending credentials (cookies, authentication)
+  credentials: false, // not allow sending credentials (cookies, authentication)
 };
 
 const app = express();
