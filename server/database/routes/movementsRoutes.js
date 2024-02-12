@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const controller = require('../controllers/movementControllers');
+const controller = require('../controllers/propertiesControllers');
 
-router.get('/movements', controller.getMovements);
-router.post('/add', controller.addMovement);
-router.put('/update/:id', controller.updateMovement);
-router.delete('/delete/:id', controller.deleteMovement);
+router.get('/properties', controller.getProperties);
+router.post('/add', controller.addProperty);
+router.put('/update/:id', controller.updateProperty);
+router.delete('/delete/:id', controller.deleteProperty);
 
 module.exports = router;
