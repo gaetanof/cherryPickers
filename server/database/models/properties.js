@@ -32,4 +32,6 @@ const propertiesSchema = mongoose.Schema({
     versionKey: false,
   })
 
-module.exports = mongoose.model("Property", propertiesSchema);
+const PropertiesModel = mongoose.model("properties", propertiesSchema)
+
+module.exports = PropertiesModel;
