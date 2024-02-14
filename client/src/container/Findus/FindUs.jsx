@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axiosConfig from '../../api/axiosConfig';
 import './FindUs.css';
 
 const FindUs = () => {
@@ -28,13 +28,17 @@ const FindUs = () => {
     }
 
     try {
-      const formDataToSend = new FormData();
-      for (let key in formData) {
-        formDataToSend.append(key, formData[key]);
-      }
-      await axios.post('/property', formDataToSend); // Envía los datos del formulario al servidor
+      // Envía los datos del formulario utilizando la configuración de Axios
+      await axiosConfig.post('/add', {
+        nombre: formData.nombre,
+        correo: formData.correo,
+        telefono: formData.telefono,
+        ubicacion: formData.ubicacion,
+        tipoPropiedad: formData.tipoPropiedad,
+        cantidadAmbientes: formData.cantidadAmbientes,
+        fotos: formData.fotos, // Este campo puede necesitar un tratamiento especial si estás enviando archivos
+      });
       alert('¡Formulario enviado con éxito!');
-      // Aquí podrías redirigir al usuario a una página de éxito o realizar alguna otra acción
     } catch (error) {
       console.error('Error al enviar el formulario:', error);
       alert(
