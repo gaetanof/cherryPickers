@@ -4,7 +4,7 @@ const colors = require("colors");
 require("dotenv").config();
 const port = process.env.PORT || 5038;
 const connectDB = require("./database/config/db");
-const Property = require("../models/properties");
+const Property = require("/server/database/models/properties");
 
 const app = express();
 
