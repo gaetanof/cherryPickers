@@ -17,9 +17,8 @@ app.use(cors());
 app.use("/api", require("./database/routes/propertiesRoutes"));
 
 // Endpoint para indicar que es una API
-app.get("/", async (req, res) => {
-  const properties = await Property.find();
-  res.status(200).json(properties);
-});
+// app.get("/", async (req, res) => {
+// console.log("soy una api")
+// });
 
 app.listen(port, console.log(`Server is running`.magenta.bold));
