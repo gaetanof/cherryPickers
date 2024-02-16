@@ -25,7 +25,10 @@ const propertiesSchema = mongoose.Schema({
     type: Number,
     required: true
   },
-  fotos: [String] // Arreglo de URLs de las fotos (opcional)
+  fotos: [{
+    secure_url: String,
+    public_id: String
+  }]// Arreglo de URLs de las fotos (opcional)
 },
   {
     timestamps: true,

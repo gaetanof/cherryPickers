@@ -4,21 +4,25 @@ const colors = require("colors");
 require("dotenv").config();
 const port = process.env.PORT || 5038;
 const connectDB = require("./database/config/db");
-const Property = require("./database/models/properties");
-
+const fileUpload = require("express-fileupload");
 const app = express();
 
 connectDB();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cors());
-
+app.use(fileUpload({
+  useTempFiles: true,
+  tempFileDir: "./uploads"
+}))
+const corsOptions = {
+  origin: 'https://cherry-pickers.vercel.app',
+  optionsSuccessStatus: 200,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}
+app.use(cors(corsOptions));
 app.use("/api", require("./database/routes/propertiesRoutes"));
-
-// Endpoint para indicar que es una API
-// app.get("/", async (req, res) => {
-// console.log("soy una api")
-// });
 
 app.listen(port, console.log(`Server is running`.magenta.bold));

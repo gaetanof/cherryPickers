@@ -1,6 +1,7 @@
 // propertiesControllers.js
-
 const Property = require("../models/properties");
+const uploadImage = require("../config/cloudinary.js");
+const fs = require("fs-extra")
 
 const getProperties = async (req, res) => {
   try {
@@ -19,12 +20,29 @@ const addProperty = async (req, res) => {
     if (!res) {
       console.error("Response object is undefined in addProperty function");
     }
+    if (req.files?.fotos) {
+      const fotosPromises = req.files.fotos.map(async (foto) => {
+        const result = await uploadImage(foto.tempFilePath);
+        return {
+          public_id: result.public_id,
+          secure_url: result.secure_url
+        };
+      });
+
+      const fotos = await Promise.all(fotosPromises);
+      req.body.fotos = fotos;
+      // Eliminar archivos temporales después de subir las fotos
+      await Promise.all(req.files.fotos.map(async (foto) => {
+        await fs.unlink(foto.tempFilePath);
+      }));
+    }
     const property = await Property.create(req.body);
     res.status(201).json(property);
   } catch (err) {
     res.status(500).json(err);
   }
 };
+
 
 const updateProperty = async (req, res) => {
   try {
