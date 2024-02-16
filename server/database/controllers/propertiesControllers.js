@@ -20,8 +20,14 @@ const addProperty = async (req, res) => {
     if (!res) {
       console.error("Response object is undefined in addProperty function");
     }
+
     if (req.files?.fotos) {
-      const fotosPromises = req.files.fotos.map(async (foto) => {
+      let fotosArray = req.files.fotos;
+      if (!Array.isArray(fotosArray)) {
+        fotosArray = [fotosArray]; // Envolver en un arreglo si no es un arreglo
+      }
+
+      const fotosPromises = fotosArray.map(async (foto) => {
         const result = await uploadImage(foto.tempFilePath);
         return {
           public_id: result.public_id,
@@ -31,17 +37,21 @@ const addProperty = async (req, res) => {
 
       const fotos = await Promise.all(fotosPromises);
       req.body.fotos = fotos;
+
       // Eliminar archivos temporales después de subir las fotos
-      await Promise.all(req.files.fotos.map(async (foto) => {
+      await Promise.all(fotosArray.map(async (foto) => {
         await fs.unlink(foto.tempFilePath);
       }));
     }
+
     const property = await Property.create(req.body);
     res.status(201).json(property);
   } catch (err) {
     res.status(500).json(err);
+    console.log(err);
   }
 };
+
 
 
 const updateProperty = async (req, res) => {
