@@ -26,3 +26,5 @@ app.use(cors(corsOptions));
 app.use("/api", require("./database/routes/propertiesRoutes"));
 
 app.listen(port, console.log(`Server is running`.magenta.bold));
+
+
