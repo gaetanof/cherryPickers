@@ -25,10 +25,8 @@ const propertiesSchema = mongoose.Schema({
     type: Number,
     required: true
   },
-  fotos: [{
-    secure_url: String,
-    public_id: String
-  }]// Arreglo de URLs de las fotos (opcional)
+  fotos: [String], // Ahora fotos es un arreglo de strings
+  // Arreglo de URLs de las fotos (opcional)
 },
   {
     timestamps: true,

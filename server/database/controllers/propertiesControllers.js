@@ -1,10 +1,36 @@
 // propertiesControllers.js
 const Property = require("../models/properties");
-const uploadImage = require("../config/cloudinary.js");
+const cloudinary = require("cloudinary").v2;
 const fs = require("fs-extra")
+const { Readable } = require('stream');
+
+async function uploadToCloudinary(file) {
+
+  let imageName = `propiedad_${Date.now()}`
+
+  return new Promise((resolve, reject) => {
+    const stream = cloudinary.uploader.upload_stream({
+      folder: 'propiedades',
+      public_id: imageName,
+      overwrite: true,
+    }, (error, result) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(result);
+      }
+    });
+
+    const readableStream = new Readable();
+    readableStream.push(file.buffer);
+    readableStream.push(null);
+    readableStream.pipe(stream);
+  });
+}
 
 const getProperties = async (req, res) => {
   try {
+
     if (!res) {
       console.error("Response object is undefined in getProperties function");
     }
@@ -17,34 +43,31 @@ const getProperties = async (req, res) => {
 
 const addProperty = async (req, res) => {
   try {
-    if (!res) {
-      console.error("Response object is undefined in addProperty function");
-    }
-
-    if (req.files?.fotos) {
-      let fotosArray = req.files.fotos;
-      if (!Array.isArray(fotosArray)) {
-        fotosArray = [fotosArray]; // Envolver en un arreglo si no es un arreglo
+    let imageNames = [];
+    if (req.files.length > 0) {
+      for (let file of req.files) {
+        const uploadResult = await uploadToCloudinary(file);
+        if (uploadResult.error) {
+          console.error(
+            "Hubo un problema al subir la imagen a Cloudinary. " +
+            uploadResult.error
+          );
+        } else {
+          imageNames.push(uploadResult.secure_url);
+        }
       }
-
-      const fotosPromises = fotosArray.map(async (foto) => {
-        const result = await uploadImage(foto.tempFilePath);
-        return {
-          public_id: result.public_id,
-          secure_url: result.secure_url
-        };
-      });
-
-      const fotos = await Promise.all(fotosPromises);
-      req.body.fotos = fotos;
-
-      // Eliminar archivos temporales después de subir las fotos
-      await Promise.all(fotosArray.map(async (foto) => {
-        await fs.unlink(foto.tempFilePath);
-      }));
     }
+    let newProperty = new Property({
+      nombreCompleto: req.body.nombreCompleto,
+      correoElectronico: req.body.correoElectronico,
+      numeroTelefono: req.body.numeroTelefono,
+      ubicacionPropiedad: req.body.ubicacionPropiedad,
+      tipoPropiedad: req.body.tipoPropiedad,
+      cantidadAmbientes: req.body.cantidadAmbientes,
+      fotos: imageNames,
+    });
 
-    const property = await Property.create(req.body);
+    let property = await newProperty.save();
     res.status(201).json(property);
   } catch (err) {
     res.status(500).json(err);
