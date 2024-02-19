@@ -5,7 +5,6 @@
   border-radius: 30px;
   margin: 10px;
 }
-
 .section__padding_navbar{
   padding:1rem;
 }
@@ -35,10 +34,10 @@
 }
 .app__navbar-links li {
   font-family: var(--font-alt);
-  color: var(--color-white);
+  color: var(--color-black);
   font-weight: 600;
   letter-spacing: 0.06em;
-  font-size: 1rem !important;
+  font-size: 2rem !important;
 }
 
 .app__navbar-links li:hover {
@@ -56,7 +55,7 @@
   padding: 1rem 2rem;
   width: 100%;
   height: 100vh;
-  background: var(--color-black);
+  background: var(--color-white);
 }
 
 .app__navbar-smallscreen_links {
@@ -68,7 +67,7 @@
   margin: 2rem;
   margin-top: 4rem;
   cursor: pointer;
-  color: var(--color-white);
+  color: var(--color-black);
   font-size: 1.5rem;
   text-align: left;
   font-family: var(--font-alt);
@@ -91,18 +90,48 @@
 
   .app__navbar-smallscreen {
       display: flex;
+      width: 100% !important;
   }
-  
+  .hamburgerMenu{
+    color: var(--color-black);
+    font-size: 30px;
+    position: fixed;
+    top: 3rem;
+    left:20rem;
+    margin-right: 0.7rem;
+    border-radius: 1rem;
+  }
+  .homeMenu {
+    color: var(--color-black);
+    font-size: 30px;
+    position: fixed;
+    top: 3rem;
+    left:20rem;
+    margin-right: 0.7rem;
+  }
+  .section__padding_navbar{
+    padding:0rem;
+  }
+  .app__navbar {
+    border-radius: 0px;
+    border-bottom-left-radius: 30px;
+    margin:0px;
+  }
+  .app__navbar-logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding:1rem;
+  }
 }
 
 @media screen and (max-width: 650px) {
-  .app__navbar {
-      padding: 1rem;
-  }
+
   .app__navbar-logo img {
       width: 100px;
   }
   .app__navbar {
+    padding: 1rem;
     border-radius: 0px;
     border-bottom-left-radius: 30px;
     margin:0px;
@@ -112,21 +141,21 @@
   }
 
   .hamburgerMenu{
-    color: var(--color-white);
+    color: var(--color-black);
     font-size: 30px;
     position: fixed;
-    top: 3rem;
-    right: 1rem;
-    margin-right: 0.7rem;
+    left:9rem; 
     border-radius: 1rem;
   }
 
   .homeMenu {
-    color: var(--color-white);
+    color: var(--color-black);
     font-size: 30px;
     position: fixed;
-    top: 3rem;
-    right: 1rem;
+    left:9rem; 
     margin-right: 0.7rem;
+  }
+  .app__navbar-logo {
+    padding:0rem;
   }
 }

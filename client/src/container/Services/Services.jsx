@@ -3,9 +3,9 @@ import './Services.css';
 import images from '../../constants/images';
 
 const Services = () => (
-  <div class="app__bg flex__center section__padding_cards" id="services">
-    <div class="container-cards">
-      <div class="services-card">
+  <div className="app__bg flex__center section__padding_cards" id="services">
+    <div className="container-cards">
+      <div className="services-card">
         <img src={images.servicesConsult} alt="app__logo" />
         <h1>Asesoría</h1>
         <ul>
@@ -14,7 +14,7 @@ const Services = () => (
           <li>Decoración y ambientación</li>
         </ul>
       </div>
-      <div class="services-card">
+      <div className="services-card">
         <img src={images.servicesCleaning} alt="app__logo" />
         <h1>Limpieza y mantenimiento</h1>
         <ul>
@@ -22,7 +22,7 @@ const Services = () => (
           <li>Mantenimiento preventivo y correctivo</li>
         </ul>
       </div>
-      <div class="services-card">
+      <div className="services-card">
         <img src={images.servicesCustomer} alt="app__logo" />
         <h1>Atención al cliente</h1>
         <ul>
@@ -30,7 +30,7 @@ const Services = () => (
           <li>Soporte 24/7 para propietarios y huéspedes</li>
         </ul>
       </div>
-      <div class="services-card">
+      <div className="services-card">
         <img src={images.servicesBooking} alt="app__logo" />
         <h1>Gestión de reservas y precios</h1>
         <ul>
