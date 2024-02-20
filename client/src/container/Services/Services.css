@@ -51,6 +51,22 @@ section__padding_cards{ padding-top:1rem ;
 
 }
 
+@media screen and (max-width: 1100px) {
+  .container-cards {
+    flex-direction: row; /* Cambiar de columna a fila */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    justify-content: center; /* Centrar los elementos */
+  }
+
+  .services-card {
+    width: 40%; /* Ajustar el ancho para que dos elementos quepan en una fila */
+    margin: 20px; /* Espaciado entre los elementos */
+  }
+}
+
+
+
+
 @media screen and (max-width: 650px) {
   .container-cards {
     flex-direction: column;
@@ -63,3 +79,4 @@ section__padding_cards{ padding-top:1rem ;
   }
 
 }
+
