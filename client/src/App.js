@@ -6,12 +6,14 @@ import './App.css';
 
 const App = () => (
   <div>
+
     <Navbar />
     <Header />
     <AboutUs />
     <Services />
     <FindUs />
     <Footer />
+
   </div>
 );
 

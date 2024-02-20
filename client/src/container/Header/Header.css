@@ -17,7 +17,6 @@
   line-height: 117px;
   font-size: 90px;
   margin-bottom: 5rem; /* Añadir margen inferior al texto */
-
 }
 
 .app__header-img img {
@@ -25,10 +24,29 @@
   margin-right: 10rem;
 }
 
+.homeButtonContainer{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  position:absolute;
+  bottom: 5rem;
+  left: 50%; /* Alinea el contenedor al centro horizontalmente */
+  transform: translateX(-50%); /* Corrige la posición para centrar horizontalmente */
+}
+
 .homeButton {
-  border:none;
-  border-radius: 20px;
-  padding:1rem;
+  font-family: var(--font-base);
+  color: var(--color-white);
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #0C0C0C99;
+  border-radius: 30px;
+  padding:1em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  max-width: fit-content;
+  white-space: nowrap; /* Evita el salto de línea */
 }
 
 .uiDisplay{

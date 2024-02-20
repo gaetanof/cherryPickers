@@ -10,10 +10,11 @@
 
 .app__bg {
   background: url('./assets/bg.png');
-  background-position: center;
+  background-position: right;
   background-size: cover;
   background-repeat: repeat;
   background-attachment: fixed;
+
 }
 
 .app__wrapper {
