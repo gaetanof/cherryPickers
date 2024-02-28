@@ -27,7 +27,6 @@
 
 }
 
-
 .aboutUs-text-back {
   background-color: rgba(255, 255, 255, 0.6); /* Fondo blanco con 80% de opacidad */
   padding: 2rem;
@@ -59,7 +58,7 @@
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1100px) {
   .app__aboutus-content {
       flex-direction: column;
   }

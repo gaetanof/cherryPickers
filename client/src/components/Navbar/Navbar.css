@@ -28,7 +28,7 @@
   white-space: nowrap; /* Evita el salto de línea */
 }
 
-.app__navbar li {
+.app__navbar li a{
   margin: 0 5rem;
   cursor: pointer;
   font-family: var(--font-alt);
@@ -36,6 +36,7 @@
   font-weight: 600;
   font-size: 1rem !important;
   white-space: nowrap; /* Evita el salto de línea */
+  text-decoration: none; /* Elimina cualquier subrayado */
 }
 
 .app__navbar-links li:hover {
@@ -95,18 +96,16 @@
     color: var(--color-black);
     font-size: 30px;
     position: absolute;
-    top: 3rem;
-    left:20rem;
-    margin-right: 0.7rem;
+    top: 2rem;
+    right:1rem;
     border-radius: 1rem;
   }
   .homeMenu {
     color: var(--color-black);
     font-size: 30px;
     position: absolute;
-    top: 3rem;
-    left:20rem;
-    margin-right: 0.7rem;
+    top: 2rem;
+    right:1rem;
   }
   .section__padding_navbar{
     padding:0rem;
@@ -140,10 +139,10 @@
   }
 
   .hamburgerMenu{
-    color: var(--color-black);
     font-size: 30px;
     position: absolute;
-    left:9rem; 
+    top:3rem;
+    right:1rem; 
     border-radius: 1rem;
   }
 
@@ -151,7 +150,8 @@
     color: var(--color-black);
     font-size: 30px;
     position: absolute;
-    left:9rem; 
+    top:3rem;
+    right:1rem; 
     margin-right: 0.7rem;
   }
   .app__navbar-logo {
