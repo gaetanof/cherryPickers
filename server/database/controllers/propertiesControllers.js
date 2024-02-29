@@ -42,6 +42,7 @@ const getProperties = async (req, res) => {
 };
 
 const addProperty = async (req, res) => {
+  console.log(req)
   try {
     let imageNames = [];
     if (req.files.length > 0) {

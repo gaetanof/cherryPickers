@@ -6,7 +6,7 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 router.get('/properties', getProperties);
-router.post('/add', upload.array("fotos"), addProperty);
+router.post('/add', upload.any(), addProperty);
 router.put('/update/:id', updateProperty);
 router.delete('/delete/:id', deleteProperty);
 

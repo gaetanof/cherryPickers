@@ -12,6 +12,7 @@ function FindUs() {
   const [tipoPropiedad, setTipoPropiedad] = useState('');
   const [cantidadAmbientes, setCantidadAmbientes] = useState('');
   const [fotos, setFotos] = useState([]);
+  const [fotosForm, setFotosForm] = useState(null);
 
   const changeInput = (e) => {
     //esto es el indice que se le dará a cada imagen, a partir del indice de la ultima foto
@@ -27,6 +28,7 @@ function FindUs() {
     let newImgsToState = readmultifiles(e, indexImg);
     let newImgsState = [...fotos, ...newImgsToState];
     setFotos(newImgsState);
+    setFotosForm(Array(...e.target.files));
   };
 
   function readmultifiles(e, indexInicial) {
@@ -67,19 +69,24 @@ function FindUs() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const propiedad = {
-      nombreCompleto,
-      correoElectronico,
-      numeroTelefono,
-      ubicacionPropiedad,
-      tipoPropiedad,
-      cantidadAmbientes,
-      fotos,
-    };
-
-    const postData = async (propiedad) => {
+    const formData = new FormData();
+    formData.append('nombreCompleto', nombreCompleto);
+    formData.append('correoElectronico', correoElectronico);
+    formData.append('numeroTelefono', numeroTelefono);
+    formData.append('ubicacionPropiedad', ubicacionPropiedad);
+    formData.append('tipoPropiedad', tipoPropiedad);
+    formData.append('cantidadAmbientes', cantidadAmbientes);
+    fotosForm.forEach((file, index) => {
+      formData.append('fotos', file);
+    });
+    const postData = async (formData) => {
+      console.log(formData);
       try {
-        await axiosConfig.post('/add', propiedad);
+        await axiosConfig.post('/add', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
         alert('¡Formulario enviado con éxito!');
       } catch (err) {
         console.log(err);
@@ -87,7 +94,7 @@ function FindUs() {
       }
     };
 
-    postData(propiedad);
+    postData(formData);
 
     setNombreCompleto('');
     setCorreoElectronico('');
@@ -95,7 +102,8 @@ function FindUs() {
     setUbicacionPropiedad('');
     setTipoPropiedad('');
     setCantidadAmbientes('');
-    setFotos([]); // Reinicia el estado de fotos
+    setFotos([]);
+    setFotosForm(null); // Reinicia el estado de fotos
   };
 
   return (
@@ -154,7 +162,12 @@ function FindUs() {
           {/* INPUT IMAGES */}
           <label className="btn btn-warning">
             <span>Cargar imagenes</span>
-            <input hidden type="file" multiple onChange={changeInput}></input>
+            <input
+              hidden
+              type="file"
+              multiple
+              onChange={(e) => changeInput(e)}
+            ></input>
           </label>
 
           {/* VIEW IMAGES */}
@@ -179,7 +192,7 @@ function FindUs() {
               </div>
             ))}
           </div>
-        </div>{' '}
+        </div>
         <div className="findUs-form_button_container">
           <button className="findUs-form button" type="submit">
             Enviar Formulario
