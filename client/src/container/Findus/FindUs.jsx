@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axiosConfig from '../../api/axiosConfig';
 import './FindUs.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,9 +14,14 @@ function FindUs() {
   const [fotos, setFotos] = useState([]);
   const [fotosForm, setFotosForm] = useState(null);
 
+  useEffect(() => {
+    console.log('Fotos form actualizado:', fotosForm);
+  }, [fotosForm]);
+
   const changeInput = (e) => {
     //esto es el indice que se le dará a cada imagen, a partir del indice de la ultima foto
     let indexImg;
+    const existingPhotos = fotosForm ? [...fotosForm] : [];
 
     //aquí evaluamos si ya hay imagenes antes de este input, para saber en dónde debe empezar el index del proximo array
     if (fotos.length > 0) {
@@ -24,11 +29,15 @@ function FindUs() {
     } else {
       indexImg = 0;
     }
-
     let newImgsToState = readmultifiles(e, indexImg);
     let newImgsState = [...fotos, ...newImgsToState];
     setFotos(newImgsState);
-    setFotosForm(Array(...e.target.files));
+
+    const newPhotos = Array.from(e.target.files);
+    const allPhotos = [...existingPhotos, ...newPhotos];
+    setFotosForm(allPhotos);
+    console.log(allPhotos);
+    console.log(fotosForm);
   };
 
   function readmultifiles(e, indexInicial) {
@@ -63,7 +72,10 @@ function FindUs() {
     const newImgs = fotos.filter(function (element) {
       return element.index !== indice;
     });
-    console.log(newImgs);
+    // Obtener la lista actualizada de archivos
+    const updatedFiles = newImgs.map((img) => img.file);
+    console.log(updatedFiles);
+    setFotosForm(updatedFiles);
     setFotos(newImgs);
   }
 
@@ -76,9 +88,12 @@ function FindUs() {
     formData.append('ubicacionPropiedad', ubicacionPropiedad);
     formData.append('tipoPropiedad', tipoPropiedad);
     formData.append('cantidadAmbientes', cantidadAmbientes);
-    fotosForm.forEach((file, index) => {
-      formData.append('fotos', file);
-    });
+    // Verificar si fotosForm no es null antes de iterar sobre él
+    if (fotosForm !== null) {
+      fotosForm.forEach((file) => {
+        formData.append('fotos', file);
+      });
+    }
     const postData = async (formData) => {
       console.log(formData);
       try {
