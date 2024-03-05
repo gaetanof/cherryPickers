@@ -10,7 +10,6 @@
   background-color: rgba(255, 255, 255, 0.6); /* Fondo blanco con 80% de opacidad */
   padding: 2rem;
   margin-top:3rem;
-  border-radius: 30px;
   display: flex;
   flex-direction: column !important;
   justify-content: center;
@@ -21,11 +20,23 @@
 .findUs-form input{
   border: 2px solid black; /* Borde negro */
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Sombra */ 
-  border-radius: 20px; /* Agregar borde redondeado */
+  border-radius: 10px; /* Agregar borde redondeado */
   padding: 10px; /* Añadir espacio interno */
   margin-top:10px;
   margin-bottom: 10px;
   width: 50%;
+  height: 3rem;
+}
+
+.findUs-form-Select{
+  border: 2px solid black; /* Borde negro */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Sombra */ 
+  border-radius: 10px; /* Agregar borde redondeado */
+  margin-top:10px;
+  margin-bottom: 10px;
+  width: 50%;
+  height: 3rem;
+
 }
 
 .findUs-form_button_container{
@@ -80,6 +91,33 @@
   height: 100%;
   cursor: pointer; /* Cambiar el cursor al pasar sobre él */
 }
+.errorContainer{
+  display:flex;
+  width: 50%;
+  justify-content: left;
+}
+.errorFindUsForm {
+color: red;
+}
+
+.add-photo-container{
+  position: relative;
+  bottom:30px;
+  left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin-top: 0;
+}
+
+.add-photo-button{  
+  position: relative;
+  bottom:3px;
+  left:10px;
+  height: 35px;
+  width: 35px;
+}
 
 @media screen and (min-width: 1800px) {
   .findUs-text-back {
@@ -92,6 +130,28 @@
   .findUs-form input{
     width: 95%;
   }
+  .findUs-form-Select{
+    width: 95%;
+  }
+  .errorContainer{
+    display:flex;
+    width: 100%;
+    justify-content: left;
+  }
+  .add-photo-container{
+    position: relative;
+    top:10px;    
+    left: -160px;
+    bottom:10px;
+    width: 100%;
+    margin-top: 0;
+  }
+
+.add-photo-button{  
+  position: relative;
+bottom:5px;
+  left:10px;
+}
 }
 
 @media screen and (max-width: 650px) {
@@ -115,6 +175,23 @@
     text-align: center !important;
     padding-top: 1rem;
   }
+
+  .add-photo-container{
+    position: relative;
+    top:10px;    
+    left: -20px;
+    bottom:10px;
+    width: 100%;
+    margin-top: 0;
+  }
+  
+
+.add-photo-button{  
+  position: relative;
+  bottom:0px;
+  top:5px;
+  left:10px;
+}
 }
 
 @media screen and (max-width: 450px) {

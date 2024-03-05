@@ -3,6 +3,9 @@ import axiosConfig from '../../api/axiosConfig';
 import './FindUs.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
+import Select from 'react-select';
+import { selectStyles } from './selectStyles';
+import { MdOutlineAddAPhoto } from 'react-icons/md';
 
 function FindUs() {
   const [nombreCompleto, setNombreCompleto] = useState('');
@@ -13,17 +16,38 @@ function FindUs() {
   const [cantidadAmbientes, setCantidadAmbientes] = useState('');
   const [fotos, setFotos] = useState([]);
   const [fotosForm, setFotosForm] = useState(null);
-
+  const [errorNombreCompleto, setErrorNombreCompleto] = useState('');
+  const [errorCorreoElectronico, setErrorCorreoElectronico] = useState('');
+  const [errorNumeroTelefono, setErrorNumeroTelefono] = useState('');
+  const [errorUbicacionPropiedad, setErrorUbicacionPropiedad] = useState('');
+  const [errorTipoPropiedad, setErrorTipoPropiedad] = useState('');
+  const [errorCantidadAmbientes, setErrorCantidadAmbientes] = useState('');
+  const [errorFotos, setErrorFotos] = useState('');
   useEffect(() => {
     console.log('Fotos form actualizado:', fotosForm);
   }, [fotosForm]);
 
+  useEffect(() => {
+    console.log('Cantidad de amb form actualizado:', cantidadAmbientes);
+  }, [cantidadAmbientes]);
+
+  const ambientes = [
+    { label: '1', value: '1' },
+    { label: '2', value: '2' },
+    { label: '3', value: '3' },
+    { label: '4', value: '4' },
+    { label: '+4', value: '+4' },
+  ];
+  const tipoPropiedades = [
+    { label: 'Casa', value: 'Casa' },
+    { label: 'Departamento', value: 'Departamento' },
+    { label: 'PH', value: 'PH' },
+  ];
+
   const changeInput = (e) => {
-    //esto es el indice que se le dará a cada imagen, a partir del indice de la ultima foto
     let indexImg;
     const existingPhotos = fotosForm ? [...fotosForm] : [];
 
-    //aquí evaluamos si ya hay imagenes antes de este input, para saber en dónde debe empezar el index del proximo array
     if (fotos.length > 0) {
       indexImg = fotos[fotos.length - 1].index + 1;
     } else {
@@ -42,16 +66,12 @@ function FindUs() {
 
   function readmultifiles(e, indexInicial) {
     const files = e.currentTarget.files;
-
-    //el array con las imagenes nuevas
     const arrayImages = [];
 
     Object.keys(files).forEach((i) => {
       const file = files[i];
-
       let url = URL.createObjectURL(file);
 
-      //console.log(file);
       arrayImages.push({
         index: indexInicial,
         name: file.name,
@@ -62,17 +82,13 @@ function FindUs() {
       indexInicial++;
     });
 
-    //despues de haber concluido el ciclo retornamos las nuevas imagenes
     return arrayImages;
   }
 
   function deleteImg(indice) {
-    //console.log("borrar img " + indice);
-
     const newImgs = fotos.filter(function (element) {
       return element.index !== indice;
     });
-    // Obtener la lista actualizada de archivos
     const updatedFiles = newImgs.map((img) => img.file);
     console.log(updatedFiles);
     setFotosForm(updatedFiles);
@@ -81,6 +97,71 @@ function FindUs() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    let errorFound = false;
+
+    if (nombreCompleto.trim() === '') {
+      setErrorNombreCompleto('(*) campo obligatorio');
+      errorFound = true;
+    } else {
+      setErrorNombreCompleto('');
+    }
+
+    if (correoElectronico.trim() === '') {
+      setErrorCorreoElectronico('(*) campo obligatorio');
+      errorFound = true;
+    } else {
+      setErrorCorreoElectronico('');
+    }
+
+    if (numeroTelefono.trim() === '') {
+      setErrorNumeroTelefono('(*) campo obligatorio');
+      errorFound = true;
+    } else {
+      setErrorNumeroTelefono('');
+    }
+
+    if (ubicacionPropiedad.trim() === '') {
+      setErrorUbicacionPropiedad('(*) campo obligatorio');
+      errorFound = true;
+    } else {
+      setErrorUbicacionPropiedad('');
+    }
+
+    if (tipoPropiedad.trim() === '') {
+      setErrorTipoPropiedad('(*) campo obligatorio');
+      errorFound = true;
+    } else {
+      setErrorTipoPropiedad('');
+    }
+
+    if (cantidadAmbientes === '') {
+      setErrorCantidadAmbientes('(*) campo obligatorio');
+      errorFound = true;
+    } else {
+      setErrorCantidadAmbientes('');
+    }
+
+    if (fotosForm && fotosForm.length > 0) {
+      fotosForm.forEach((file) => {
+        const validExtensions = ['.jpg', 'jpeg', '.png'];
+        const fileExtension = file.name.slice(-4).toLowerCase();
+        console.log(fileExtension);
+        if (!validExtensions.includes(fileExtension)) {
+          setErrorFotos(
+            'Formato de imagen no contemplado. Por favor, use archivos JPG, JPEG o PNG.'
+          );
+          errorFound = true;
+        } else {
+          setErrorFotos('');
+        }
+      });
+    }
+
+    if (errorFound) {
+      return;
+    }
+
     const formData = new FormData();
     formData.append('nombreCompleto', nombreCompleto);
     formData.append('correoElectronico', correoElectronico);
@@ -88,12 +169,13 @@ function FindUs() {
     formData.append('ubicacionPropiedad', ubicacionPropiedad);
     formData.append('tipoPropiedad', tipoPropiedad);
     formData.append('cantidadAmbientes', cantidadAmbientes);
-    // Verificar si fotosForm no es null antes de iterar sobre él
+
     if (fotosForm !== null) {
       fotosForm.forEach((file) => {
         formData.append('fotos', file);
       });
     }
+
     const postData = async (formData) => {
       console.log(formData);
       try {
@@ -103,6 +185,7 @@ function FindUs() {
           },
         });
         alert('¡Formulario enviado con éxito!');
+        window.location.reload();
       } catch (err) {
         console.log(err);
         console.error('Error al enviar el formulario:', err);
@@ -118,7 +201,9 @@ function FindUs() {
     setTipoPropiedad('');
     setCantidadAmbientes('');
     setFotos([]);
-    setFotosForm(null); // Reinicia el estado de fotos
+    setFotosForm(null);
+
+    // window.location.reload();
   };
 
   return (
@@ -134,6 +219,11 @@ function FindUs() {
           value={nombreCompleto}
           onChange={(e) => setNombreCompleto(e.target.value)}
         />
+        <div className="errorContainer">
+          {errorNombreCompleto && (
+            <p className="errorFindUsForm">{errorNombreCompleto}</p>
+          )}
+        </div>
         <input
           type="email"
           name="correoElectronico"
@@ -141,6 +231,11 @@ function FindUs() {
           value={correoElectronico}
           onChange={(e) => setCorreoElectronico(e.target.value)}
         />
+        <div className="errorContainer">
+          {errorCorreoElectronico && (
+            <p className="errorFindUsForm">{errorCorreoElectronico}</p>
+          )}
+        </div>
         <input
           type="text"
           name="numeroTelefono"
@@ -148,6 +243,11 @@ function FindUs() {
           value={numeroTelefono}
           onChange={(e) => setNumeroTelefono(e.target.value)}
         />
+        <div className="errorContainer">
+          {errorNumeroTelefono && (
+            <p className="errorFindUsForm">{errorNumeroTelefono}</p>
+          )}
+        </div>
         <input
           type="text"
           name="ubicacionPropiedad"
@@ -155,50 +255,74 @@ function FindUs() {
           value={ubicacionPropiedad}
           onChange={(e) => setUbicacionPropiedad(e.target.value)}
         />
-        <input
-          type="text"
+        <div className="errorContainer">
+          {errorUbicacionPropiedad && (
+            <p className="errorFindUsForm">{errorUbicacionPropiedad}</p>
+          )}
+        </div>
+        <Select
+          isSearchable={false}
+          className="findUs-form-Select"
           name="tipoPropiedad"
+          options={tipoPropiedades}
           placeholder="Tipo de Propiedad"
-          value={tipoPropiedad}
-          onChange={(e) => setTipoPropiedad(e.target.value)}
+          onChange={(selectedOption) =>
+            setTipoPropiedad(selectedOption.value.trim())
+          }
+          styles={selectStyles} // Condición para seleccionar estilos
         />
-        <input
-          type="text"
+        <div className="errorContainer">
+          {errorTipoPropiedad && (
+            <p className="errorFindUsForm">{errorTipoPropiedad}</p>
+          )}
+        </div>
+        <Select
+          isSearchable={false}
+          className="findUs-form-Select"
           name="cantidadAmbientes"
-          placeholder="Cantidad de Ambientes"
-          value={cantidadAmbientes}
-          onChange={(e) => setCantidadAmbientes(e.target.value)}
+          options={ambientes}
+          placeholder="Tipo de Propiedad"
+          onChange={(selectedOption) =>
+            setCantidadAmbientes(selectedOption.value.trim())
+          }
+          styles={selectStyles} // Condición para seleccionar estilos
         />
-        <h1 className="app__findUs-h1">
-          Carga fotos para hacernos un tour virtual de tu propiedad!
-        </h1>
+        <div className="errorContainer">
+          {errorCantidadAmbientes && (
+            <p className="errorFindUsForm">{errorCantidadAmbientes}</p>
+          )}
+        </div>
         <div className="container-fluid">
           <br></br>
-          {/* INPUT IMAGES */}
-          <label className="btn btn-warning">
-            <span>Cargar imagenes</span>
+          <div className="add-photo-container">
+            <h1 className="app__findUs-h1">Mostranos tu unidad:</h1>
+            <MdOutlineAddAPhoto
+              className="add-photo-button"
+              onClick={() => document.getElementById('fileInput').click()}
+            />
+          </div>
+          <label>
             <input
+              id="fileInput"
               hidden
               type="file"
               multiple
               onChange={(e) => changeInput(e)}
             ></input>
           </label>
-
-          {/* VIEW IMAGES */}
           <div className="row">
-            {fotos.map((fotos) => (
-              <div className="col-6 col-sm-4 col-lg-3 square" key={fotos.index}>
+            {fotos.map((foto) => (
+              <div className="col-6 col-sm-4 col-lg-3 square" key={foto.index}>
                 <div className="content_img">
                   <button
                     className="position-absolute btn btn-danger"
-                    onClick={deleteImg.bind(this, fotos.index)}
+                    onClick={deleteImg.bind(this, foto.index)}
                   >
                     x
                   </button>
                   <img
-                    alt="algo"
-                    src={fotos.url}
+                    alt="Imagen de propiedad"
+                    src={foto.url}
                     data-toggle="modal"
                     data-target="#ModalPreViewImg"
                     className="img-responsive"
@@ -207,6 +331,7 @@ function FindUs() {
               </div>
             ))}
           </div>
+          {errorFotos && <p className="error">{errorFotos}</p>}
         </div>
         <div className="findUs-form_button_container">
           <button className="findUs-form button" type="submit">

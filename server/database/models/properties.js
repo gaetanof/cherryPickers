@@ -22,7 +22,7 @@ const propertiesSchema = mongoose.Schema({
     required: true
   },
   cantidadAmbientes: {
-    type: Number,
+    type: String,
     required: true
   },
   fotos: [String], // Ahora fotos es un arreglo de strings
