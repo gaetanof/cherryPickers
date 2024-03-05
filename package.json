@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "bootstrap": "^5.3.3",
     "cloudinary": "^2.0.1",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
