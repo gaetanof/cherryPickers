@@ -16,7 +16,9 @@
   letter-spacing: 0.03em;
   line-height: 117px;
   font-size: 90px;
-  margin-bottom: 5rem; /* Añadir margen inferior al texto */
+  width: 100%;
+  text-align: center; /* Centrar el texto */
+margin-bottom: 5rem; /* Añadir margen inferior al texto */
 }
 
 .app__header-img img {
