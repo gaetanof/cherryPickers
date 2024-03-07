@@ -6,7 +6,7 @@ import './styles.css';
 import Select from 'react-select';
 import { selectStyles } from './selectStyles';
 import { MdOutlineAddAPhoto } from 'react-icons/md';
-// import Swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 
 function FindUs() {
   const [nombreCompleto, setNombreCompleto] = useState('');
@@ -180,13 +180,29 @@ function FindUs() {
     const postData = async (formData) => {
       console.log(formData);
       try {
+        document.body.style.overflow = 'hidden'; // Evita el desplazamiento de la página
+        document.getElementById('root').style.filter = 'blur(5px)';
         await axiosConfig.post('/add', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
         });
-        alert('¡Formulario enviado con éxito!');
-        window.location.reload();
+        await Swal.fire({
+          title: '¡Formulario enviado con éxito!',
+          icon: 'success',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'OK',
+          cancelButtonText: 'Cancelar',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Restaurar estilos originales
+            document.body.style.overflow = '';
+            document.getElementById('root').style.filter = '';
+            window.location.reload();
+          }
+        });
       } catch (err) {
         console.log(err);
         console.error('Error al enviar el formulario:', err);

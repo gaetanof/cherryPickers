@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const colors = require("colors");
 require("dotenv").config();
 const port = process.env.PORT || 5038;
 const connectDB = require("./database/config/db");
@@ -19,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 const corsOptions = {
-  origin: ['https://cherry-pickers-client.vercel.app', 'https://cherry-pickers.vercel.app'],
+  origin: ['https://cherry-pickers.vercel.app', 'http://localhost:3000'],
   optionsSuccessStatus: 200,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
@@ -29,5 +30,4 @@ app.use(cors(corsOptions));
 app.use("/api", require("./database/routes/propertiesRoutes"));
 
 app.listen(port, console.log(`Server is running`.magenta.bold));
-
 
