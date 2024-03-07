@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const colors = require("colors");
 require("dotenv").config();
 const port = process.env.PORT || 5038;
 const connectDB = require("./database/config/db");
@@ -24,7 +23,7 @@ const corsOptions = {
   optionsSuccessStatus: 200,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Access-Control-Allow-Origin'],
 }
 app.use(cors(corsOptions));
 app.use("/api", require("./database/routes/propertiesRoutes"));
