@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 const corsOptions = {
-  origin: ['https://cherry-pickers-client.vercel.app', 'http://localhost:3000'],
+  origin: ['https://cherry-pickers-client.vercel.app', 'https://cherry-pickers.vercel.app'],
   optionsSuccessStatus: 200,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
