@@ -19,11 +19,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 const corsOptions = {
-  origin: ['https://cherry-pickers.vercel.app', 'http://localhost:3000'],
+  origin: ['https://cherry-pickers-client.vercel.app', 'http://localhost:3000'],
   optionsSuccessStatus: 200,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization', 'Access-Control-Allow-Origin'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }
 app.use(cors(corsOptions));
 app.use("/api", require("./database/routes/propertiesRoutes"));
