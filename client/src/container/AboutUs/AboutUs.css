@@ -2,8 +2,8 @@
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+  width: 100%;
 }
 
 .app__aboutUs-h1 {
@@ -11,8 +11,7 @@
   color: var(--color-petroleo);
   font-weight: 600;
   letter-spacing: 0.03em;
-  line-height: 100px;
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: center !important;
 }
 
@@ -24,15 +23,35 @@
   line-height: 2.5rem !important;
   padding:0rem 1rem;
   word-break: break-word!important;
-
 }
 
 .aboutUs-text-back {
   background-color: rgba(255, 255, 255, 0.6); /* Fondo blanco con 80% de opacidad */
-  padding: 2rem;
-  margin-top:3rem;
   border-radius: 30px;
-  display: inline-block;
+  align-items: center;
+}
+
+.homeButtonContainer{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 5rem;
+  padding: 1rem
+}
+
+.homeButton {
+  font-family: var(--font-base);
+  color: var(--color-white);
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #0C0C0C99;
+  border-radius: 30px;
+  padding:1em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  max-width: fit-content;
+  white-space: nowrap; /* Evita el salto de línea */
 }
 
 .app__aboutus-overlay {
@@ -62,6 +81,9 @@
   .app__aboutus-content {
       flex-direction: column;
   }
+  .homeButton {
+    padding:1rem !important;
+    }
 }
 
 @media screen and (max-width: 650px) {

@@ -7,25 +7,14 @@ import './Navbar.css';
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
   return (
-    <div className="app__bg flex__center section__padding_navbar">
+    <div className="app__bg section__padding_navbar">
       <nav className="app__navbar">
         <div className="app__navbar-logo">
           <img src={images.cherryPickersLogo} alt="app__logo" />
         </div>
-        <ul className="app__navbar-links">
-          <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#about">¿Quienes somos?</a>
-          </li>
-          <li>
-            <a href="#services">Servicios</a>
-          </li>
-          <li>
-            <a href="#contact">Contacto</a>
-          </li>
-        </ul>
+        <div>
+          <h1 className="app__navbar-h1">CHERRY PICKERS</h1>
+        </div>
         <div className="app__navbar-smallscreen">
           <GiHamburgerMenu
             className="hamburgerMenu"
@@ -38,11 +27,6 @@ const Navbar = () => {
                 onClick={() => setToggleMenu(false)}
               />
               <ul className="app__navbar-smallscreen_links">
-                <li>
-                  <a href="#home" onClick={() => setToggleMenu(false)}>
-                    Home
-                  </a>
-                </li>
                 <li>
                   <a href="#about" onClick={() => setToggleMenu(false)}>
                     ¿Quienes somos?

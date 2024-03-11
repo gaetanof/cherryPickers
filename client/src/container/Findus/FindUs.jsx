@@ -45,6 +45,26 @@ function FindUs() {
     { label: 'PH', value: 'PH' },
   ];
 
+  const getWindowWidth = () => {
+    return window.innerWidth;
+  };
+
+  // Estado para almacenar el ancho de la ventana
+  const [windowWidth, setWindowWidth] = useState(getWindowWidth());
+
+  // useEffect para actualizar el ancho de la ventana cuando cambia
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(getWindowWidth());
+    };
+
+    // Agrega un event listener para el evento de redimensionamiento
+    window.addEventListener('resize', handleResize);
+
+    // Limpia el event listener cuando el componente se desmonta
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const changeInput = (e) => {
     let indexImg;
     const existingPhotos = fotosForm ? [...fotosForm] : [];
@@ -327,6 +347,13 @@ function FindUs() {
               onChange={(e) => changeInput(e)}
             ></input>
           </label>
+          {windowWidth > 650 && (
+            <div className="findUs-form_button_container">
+              <button className="findUs-form button" type="submit">
+                Enviar Formulario
+              </button>
+            </div>
+          )}
           <div className="row">
             {fotos.map((foto) => (
               <div className="col-6 col-sm-4 col-lg-3 square" key={foto.index}>
@@ -350,11 +377,13 @@ function FindUs() {
           </div>
           {errorFotos && <p className="error">{errorFotos}</p>}
         </div>
-        <div className="findUs-form_button_container">
-          <button className="findUs-form button" type="submit">
-            Enviar Formulario
-          </button>
-        </div>
+        {windowWidth < 650 && (
+          <div className="findUs-form_button_container">
+            <button className="findUs-form button" type="submit">
+              Enviar Formulario
+            </button>
+          </div>
+        )}
       </form>
     </div>
   );
