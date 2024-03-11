@@ -359,10 +359,10 @@ function FindUs() {
               <div className="col-6 col-sm-4 col-lg-3 square" key={foto.index}>
                 <div className="content_img">
                   <button
-                    className="position-absolute btn btn-danger"
+                    className="position-absolute btn-danger btn-danger-intern"
                     onClick={deleteImg.bind(this, foto.index)}
                   >
-                    x
+                    X
                   </button>
                   <img
                     alt="Imagen de propiedad"
