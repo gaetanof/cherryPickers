@@ -1,49 +1,53 @@
-.container-cards{
-  width:100%;
+.container-cards {
+  width: 100%;
   display: flex;
   max-width: 1200px;
 }
 
-section__padding_cards{ padding-top:1rem ;
+.section__padding_cards {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+
 }
 
-.services-card{
+.services-card {
   width: 100%;
-  margin:25px;
+  margin: 25px;
   border-radius: 30px;
-  overflow:hidden;
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con 80% de opacidad */
-  box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
-  cursor:default;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Fondo blanco con 80% de opacidad */
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  cursor: default;
   transition: all 400ms ease;
 }
 
-.services-card:hover{
-  box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+.services-card:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
   transform: translateY(-3%);
-  background-color:var(--color-white);
+  background-color: var(--color-white);
   font-weight: 600;
 }
 
-.services-card-icon{
+.services-card-icon {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top:1rem;
-  margin-bottom:1rem;
-  height:5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 5rem;
 }
 
-.services-card h1{
+.services-card h1 {
   font-family: var(--font-alt);
   color: var(--color-petroleo);
   font-size: 1rem;
   font-weight: 600;
-  text-align: center ;
+  text-align: center;
 }
 
-.services-card ul{
+.services-card ul {
   font-family: var(--font-alt);
   font-size: 1rem;
   padding: 1rem;
@@ -59,14 +63,19 @@ section__padding_cards{ padding-top:1rem ;
 
 @media screen and (max-width: 1100px) {
   .container-cards {
-    flex-direction: row; /* Cambiar de columna a fila */
-    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
-    justify-content: center; /* Centrar los elementos */
+    flex-direction: row;
+    /* Cambiar de columna a fila */
+    flex-wrap: wrap;
+    /* Permitir que los elementos se envuelvan */
+    justify-content: center;
+    /* Centrar los elementos */
   }
 
   .services-card {
-    width: 40%; /* Ajustar el ancho para que dos elementos quepan en una fila */
-    margin: 20px; /* Espaciado entre los elementos */
+    width: 40%;
+    /* Ajustar el ancho para que dos elementos quepan en una fila */
+    margin: 20px;
+    /* Espaciado entre los elementos */
   }
 }
 
@@ -85,4 +94,3 @@ section__padding_cards{ padding-top:1rem ;
   }
 
 }
-
