@@ -24,6 +24,8 @@ function FindUs() {
   const [errorTipoPropiedad, setErrorTipoPropiedad] = useState('');
   const [errorCantidadAmbientes, setErrorCantidadAmbientes] = useState('');
   const [errorFotos, setErrorFotos] = useState('');
+  const [isLoading, setIsLoading] = useState(false); // Estado para controlar la visualización del indicador de carga
+
   useEffect(() => {
     console.log('Fotos form actualizado:', fotosForm);
   }, [fotosForm]);
@@ -118,6 +120,7 @@ function FindUs() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true); // Activa el indicador de carga
 
     let errorFound = false;
 
@@ -180,6 +183,7 @@ function FindUs() {
     }
 
     if (errorFound) {
+      setIsLoading(false); // Desactiva el indicador de carga si hay errores
       return;
     }
 
@@ -226,6 +230,8 @@ function FindUs() {
       } catch (err) {
         console.log(err);
         console.error('Error al enviar el formulario:', err);
+      } finally {
+        setIsLoading(false); // Desactiva el indicador de carga al finalizar el envío
       }
     };
 
@@ -245,6 +251,7 @@ function FindUs() {
 
   return (
     <div className="app__bg flex__center section__padding" id="contact">
+      {isLoading && <div className="loading-indicator">Cargando...</div>}
       <form
         className="findUs-form form_container"
         onSubmit={(e) => handleSubmit(e)}

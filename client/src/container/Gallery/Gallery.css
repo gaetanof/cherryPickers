@@ -1,11 +1,10 @@
 .app__gallery {
   flex-direction: row;
   background: var(--color-black);
-  padding: 0rem 0rem 4rem 6rem;
+  padding: 0rem 0rem 0rem 6rem;
   border-radius: 30px;
   width: 100%;
 }
-
 
 .app__Gallery-h1 {
   font-family: var(--font-alt);
@@ -73,8 +72,6 @@
   object-fit: cover;
   opacity: 1;
   transition: .5s ease;
-  border-radius: 30px;
-
 }
 
 .app__gallery-images_card:hover img {

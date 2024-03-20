@@ -146,6 +146,10 @@
   width: 35px;
 }
 
+.loading-indicator {
+  font-size: 100px;
+}
+
 @media screen and (min-width: 1800px) {
   .findUs-text-back {
     margin: 0;
