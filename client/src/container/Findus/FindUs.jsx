@@ -248,150 +248,159 @@ function FindUs() {
 
     // window.location.reload();
   };
+  console.log(isLoading); // Agrega esto para depurar
 
   return (
     <div className="app__bg flex__center section__padding" id="contact">
-      {isLoading && <div className="loading-indicator">Cargando...</div>}
-      <form
-        className="findUs-form form_container"
-        onSubmit={(e) => handleSubmit(e)}
-      >
-        <input
-          type="text"
-          name="nombreCompleto"
-          placeholder="Nombre Completo"
-          value={nombreCompleto}
-          onChange={(e) => setNombreCompleto(e.target.value)}
-        />
-        <div className="errorContainer">
-          {errorNombreCompleto && (
-            <p className="errorFindUsForm">{errorNombreCompleto}</p>
-          )}
+      {isLoading ? (
+        <div className="overlay-loading-indicator">
+          <div className="loading-indicator">Cargando...</div>
         </div>
-        <input
-          type="email"
-          name="correoElectronico"
-          placeholder="Correo Electrónico"
-          value={correoElectronico}
-          onChange={(e) => setCorreoElectronico(e.target.value)}
-        />
-        <div className="errorContainer">
-          {errorCorreoElectronico && (
-            <p className="errorFindUsForm">{errorCorreoElectronico}</p>
-          )}
-        </div>
-        <input
-          type="text"
-          name="numeroTelefono"
-          placeholder="Número de Teléfono"
-          value={numeroTelefono}
-          onChange={(e) => setNumeroTelefono(e.target.value)}
-        />
-        <div className="errorContainer">
-          {errorNumeroTelefono && (
-            <p className="errorFindUsForm">{errorNumeroTelefono}</p>
-          )}
-        </div>
-        <input
-          type="text"
-          name="ubicacionPropiedad"
-          placeholder="Ubicación de la Propiedad"
-          value={ubicacionPropiedad}
-          onChange={(e) => setUbicacionPropiedad(e.target.value)}
-        />
-        <div className="errorContainer">
-          {errorUbicacionPropiedad && (
-            <p className="errorFindUsForm">{errorUbicacionPropiedad}</p>
-          )}
-        </div>
-        <Select
-          isSearchable={false}
-          className="findUs-form-Select"
-          name="tipoPropiedad"
-          options={tipoPropiedades}
-          placeholder="Tipo de Propiedad"
-          onChange={(selectedOption) =>
-            setTipoPropiedad(selectedOption.value.trim())
-          }
-          styles={selectStyles} // Condición para seleccionar estilos
-        />
-        <div className="errorContainer">
-          {errorTipoPropiedad && (
-            <p className="errorFindUsForm">{errorTipoPropiedad}</p>
-          )}
-        </div>
-        <Select
-          isSearchable={false}
-          className="findUs-form-Select"
-          name="cantidadAmbientes"
-          options={ambientes}
-          placeholder="Cantidad de ambientes"
-          onChange={(selectedOption) =>
-            setCantidadAmbientes(selectedOption.value.trim())
-          }
-          styles={selectStyles} // Condición para seleccionar estilos
-        />
-        <div className="errorContainer">
-          {errorCantidadAmbientes && (
-            <p className="errorFindUsForm">{errorCantidadAmbientes}</p>
-          )}
-        </div>
-        <div className="container-fluid">
-          <br></br>
-          <div className="add-photo-container">
-            <h1 className="app__findUs-h1">Mostranos tu unidad:</h1>
-            <MdOutlineAddAPhoto
-              className="add-photo-button"
-              onClick={() => document.getElementById('fileInput').click()}
-            />
+      ) : (
+        <form
+          className="findUs-form form_container"
+          onSubmit={(e) => handleSubmit(e)}
+        >
+          <input
+            type="text"
+            name="nombreCompleto"
+            placeholder="Nombre Completo"
+            value={nombreCompleto}
+            onChange={(e) => setNombreCompleto(e.target.value)}
+          />
+          <div className="errorContainer">
+            {errorNombreCompleto && (
+              <p className="errorFindUsForm">{errorNombreCompleto}</p>
+            )}
           </div>
-          <label>
-            <input
-              id="fileInput"
-              hidden
-              type="file"
-              multiple
-              onChange={(e) => changeInput(e)}
-            ></input>
-          </label>
-          {windowWidth > 650 && (
+          <input
+            type="email"
+            name="correoElectronico"
+            placeholder="Correo Electrónico"
+            value={correoElectronico}
+            onChange={(e) => setCorreoElectronico(e.target.value)}
+          />
+          <div className="errorContainer">
+            {errorCorreoElectronico && (
+              <p className="errorFindUsForm">{errorCorreoElectronico}</p>
+            )}
+          </div>
+          <input
+            type="text"
+            name="numeroTelefono"
+            placeholder="Número de Teléfono"
+            value={numeroTelefono}
+            onChange={(e) => setNumeroTelefono(e.target.value)}
+          />
+          <div className="errorContainer">
+            {errorNumeroTelefono && (
+              <p className="errorFindUsForm">{errorNumeroTelefono}</p>
+            )}
+          </div>
+          <input
+            type="text"
+            name="ubicacionPropiedad"
+            placeholder="Ubicación de la Propiedad"
+            value={ubicacionPropiedad}
+            onChange={(e) => setUbicacionPropiedad(e.target.value)}
+          />
+          <div className="errorContainer">
+            {errorUbicacionPropiedad && (
+              <p className="errorFindUsForm">{errorUbicacionPropiedad}</p>
+            )}
+          </div>
+          <Select
+            isSearchable={false}
+            className="findUs-form-Select"
+            name="tipoPropiedad"
+            options={tipoPropiedades}
+            placeholder="Tipo de Propiedad"
+            onChange={(selectedOption) =>
+              setTipoPropiedad(selectedOption.value.trim())
+            }
+            styles={selectStyles} // Condición para seleccionar estilos
+          />
+          <div className="errorContainer">
+            {errorTipoPropiedad && (
+              <p className="errorFindUsForm">{errorTipoPropiedad}</p>
+            )}
+          </div>
+          <Select
+            isSearchable={false}
+            className="findUs-form-Select"
+            name="cantidadAmbientes"
+            options={ambientes}
+            placeholder="Cantidad de ambientes"
+            onChange={(selectedOption) =>
+              setCantidadAmbientes(selectedOption.value.trim())
+            }
+            styles={selectStyles} // Condición para seleccionar estilos
+          />
+          <div className="errorContainer">
+            {errorCantidadAmbientes && (
+              <p className="errorFindUsForm">{errorCantidadAmbientes}</p>
+            )}
+          </div>
+          <div className="container-fluid">
+            <br></br>
+            <div className="add-photo-container">
+              <h1 className="app__findUs-h1">Mostranos tu unidad:</h1>
+              <MdOutlineAddAPhoto
+                className="add-photo-button"
+                onClick={() => document.getElementById('fileInput').click()}
+              />
+            </div>
+            <label>
+              <input
+                id="fileInput"
+                hidden
+                type="file"
+                multiple
+                onChange={(e) => changeInput(e)}
+              ></input>
+            </label>
+            {windowWidth > 650 && (
+              <div className="findUs-form_button_container">
+                <button className="findUs-form button" type="submit">
+                  Enviar Formulario
+                </button>
+              </div>
+            )}
+            <div className="row">
+              {fotos.map((foto) => (
+                <div
+                  className="col-6 col-sm-4 col-lg-3 square"
+                  key={foto.index}
+                >
+                  <div className="content_img">
+                    <button
+                      className="position-absolute btn-danger btn-danger-intern"
+                      onClick={deleteImg.bind(this, foto.index)}
+                    >
+                      X
+                    </button>
+                    <img
+                      alt="Imagen de propiedad"
+                      src={foto.url}
+                      data-toggle="modal"
+                      data-target="#ModalPreViewImg"
+                      className="img-responsive"
+                    ></img>
+                  </div>
+                </div>
+              ))}
+            </div>
+            {errorFotos && <p className="error">{errorFotos}</p>}
+          </div>
+          {windowWidth < 650 && (
             <div className="findUs-form_button_container">
               <button className="findUs-form button" type="submit">
                 Enviar Formulario
               </button>
             </div>
-          )}
-          <div className="row">
-            {fotos.map((foto) => (
-              <div className="col-6 col-sm-4 col-lg-3 square" key={foto.index}>
-                <div className="content_img">
-                  <button
-                    className="position-absolute btn-danger btn-danger-intern"
-                    onClick={deleteImg.bind(this, foto.index)}
-                  >
-                    X
-                  </button>
-                  <img
-                    alt="Imagen de propiedad"
-                    src={foto.url}
-                    data-toggle="modal"
-                    data-target="#ModalPreViewImg"
-                    className="img-responsive"
-                  ></img>
-                </div>
-              </div>
-            ))}
-          </div>
-          {errorFotos && <p className="error">{errorFotos}</p>}
-        </div>
-        {windowWidth < 650 && (
-          <div className="findUs-form_button_container">
-            <button className="findUs-form button" type="submit">
-              Enviar Formulario
-            </button>
-          </div>
-        )}
-      </form>
+          )}{' '}
+        </form>
+      )}
     </div>
   );
 }

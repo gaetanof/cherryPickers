@@ -16,7 +16,15 @@ const AboutUs = () => {
             enfoque de punta a punta nos permite ofrecer soluciones
             personalizadas y efectivas para cada uno de nuestros clientes,
             asegurándonos de que sus propiedades estén siempre en óptimas
-            condiciones y cuenten con una estética impecable.
+            condiciones y cuenten con una estética impecable. Con CHERRY PICKERS
+            los dueños de las propiedades pueden despreocuparse del proceso de
+            alquiler, ya que, nos encargamos de todo. Nuestro objetivo es
+            brindarles tranquilidad y confianza, permitiéndoles disfrutar de los
+            beneficios de alquilar sus propiedades sin las complicaciones
+            asociadas a la administración y el mantenimiento diario. Al trabajar
+            con nosotros, pueden estar seguros de que sus propiedades lucirán
+            aún más atractivas y generarán mayores ingresos gracias a nuestras
+            estrategias enfocadas en potenciar la demanda y rentabilidad
           </p>
           <div className="homeButtonContainer">
             <button

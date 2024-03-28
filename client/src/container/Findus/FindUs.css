@@ -147,8 +147,24 @@
 }
 
 .loading-indicator {
-  font-size: 100px;
+  font-size: 50px;
+  font-family: var(--font-base);
+  color: var(--color-black);
 }
+
+.overlay-loading-indicator {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 20rem;
+  margin-top: 3rem;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: column !important;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 30px;
+}
+
 
 @media screen and (min-width: 1800px) {
   .findUs-text-back {
