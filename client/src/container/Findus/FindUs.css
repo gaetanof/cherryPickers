@@ -154,7 +154,6 @@
 
 .overlay-loading-indicator {
   background-color: rgba(255, 255, 255, 0.6);
-  padding: 20rem;
   margin-top: 3rem;
   margin-bottom: 0px;
   display: flex;
@@ -164,7 +163,6 @@
   width: 100%;
   border-radius: 30px;
 }
-
 
 @media screen and (min-width: 1800px) {
   .findUs-text-back {
@@ -206,6 +204,13 @@
   .findUs-form button {
     left: 55%;
     bottom: 3rem;
+  }
+
+  .swal2-popup {
+    font-size: 1rem;
+    /* Tamaño de fuente más pequeño para dispositivos móviles */
+    width: 200% !important;
+    /* Hace la alerta más ancha en dispositivos pequeños */
   }
 }
 

@@ -205,7 +205,7 @@ function FindUs() {
       console.log(formData);
       try {
         document.body.style.overflow = 'hidden'; // Evita el desplazamiento de la página
-        document.getElementById('root').style.filter = 'blur(5px)';
+        // document.getElementById('root').style.filter = 'blur(5px)';
         await axiosConfig.post('/add', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
@@ -214,17 +214,15 @@ function FindUs() {
         await Swal.fire({
           title: '¡Formulario enviado con éxito!',
           icon: 'success',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
+          background: 'var(--color-white)',
+          color: 'var(--color-black)',
+          confirmButtonColor: 'var(--color-black)',
           confirmButtonText: 'OK',
-          cancelButtonText: 'Cancelar',
         }).then((result) => {
           if (result.isConfirmed) {
             // Restaurar estilos originales
             document.body.style.overflow = '';
             document.getElementById('root').style.filter = '';
-            window.location.reload();
           }
         });
       } catch (err) {
