@@ -26,7 +26,7 @@
   font-family: var(--font-base);
   color: var(--color-black);
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   font-size: 4rem;
   text-align: center;
 }

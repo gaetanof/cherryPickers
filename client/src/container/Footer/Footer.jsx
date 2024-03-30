@@ -1,23 +1,19 @@
 import React from 'react';
-import { FiFacebook, FiTwitter, FiInstagram } from 'react-icons/fi';
-import { images } from '../../constants';
+import { FiInstagram } from 'react-icons/fi';
 import './Footer.css';
 
 const Footer = () => (
-  <footer className="app__bg section__padding" id="login">
+  <footer className="app__bg section__padding_footer" id="footer">
     <div className="app__footer-links_icons">
-      <a href="https://www.facebook.com">
-        <FiFacebook />
-      </a>
-      <a href="https://www.twitter.com">
-        <FiTwitter />
-      </a>
-      <a href="https://www.instagram.com">
+      <p>Seguinos en Instagram</p>
+      <a href="https://www.instagram.com/_cherrypickers?igsh=MWtrbHlsajAwZGxwbg==">
         <FiInstagram />
       </a>
     </div>
     <div className="footer__copyright">
-      <p>2024 CHERRY PICKERS. All Rights reserved.</p>
+      <p className="footer_copyright_paragraph">
+        2024 CHERRY PICKERS. All Rights reserved.
+      </p>
     </div>
   </footer>
 );

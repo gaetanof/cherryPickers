@@ -38,6 +38,11 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li>
+                  <a href="#showroom" onClick={() => setToggleMenu(false)}>
+                    Showroom
+                  </a>
+                </li>
+                <li>
                   <a href="#contact" onClick={() => setToggleMenu(false)}>
                     Contacto
                   </a>

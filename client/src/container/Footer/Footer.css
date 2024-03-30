@@ -1,19 +1,33 @@
 .app__footer-links_icons {
-  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+}
+
+.section__padding_footer {
+  padding: 0;
 }
 
 .app__footer-links_icons svg {
   color: var(--color-black);
-  margin: 0.5rem;
-  font-size: 24px;
+  font-size: 30px;
   cursor: pointer;
+  font-family: var(--font-alt);
+  margin-left: 15px;
 }
 
 .app__footer-links_icons svg:hover {
-  color: var(--color-softbrown);
+  color: var(--color-white);
 }
 
 .footer__copyright {
   margin-top: 3rem;
   font-family: var(--font-base);
+  white-space: nowrap;
+  margin: 0px;
+}
+
+.footer_copyright_paragraph {
+  margin: 0px;
+  padding: 1rem
 }

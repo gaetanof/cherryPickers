@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  BsInstagram,
-  BsArrowLeftShort,
-  BsArrowRightShort,
-} from 'react-icons/bs';
+import { BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
 
 import { images } from '../../constants';
 import './Gallery.css';
@@ -22,7 +18,7 @@ const Gallery = () => {
   };
 
   return (
-    <div className="app__bg">
+    <div className="app__bg" id="showroom">
       <div className="app__gallery flex__center">
         <div className="app__gallery-content">
           <h1 className="app__Gallery-h1">Showroom.</h1>
@@ -43,7 +39,6 @@ const Gallery = () => {
                 key={`gallery_image-${index + 1}`}
               >
                 <img src={image} alt="gallery_image" />
-                <BsInstagram className="gallery__image-icon" />
               </div>
             ))}
           </div>

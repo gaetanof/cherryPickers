@@ -2,8 +2,13 @@
   position: relative;
   display: flex;
   justify-content: center;
-  height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+  height: 100vh;
+  /* Ocupa el 100% de la altura de la ventana */
   width: 100%;
+}
+
+.section__padding_aboutUs {
+  padding-top: 2rem;
 }
 
 .app__aboutUs-h1 {
@@ -13,26 +18,28 @@
   letter-spacing: 0.03em;
   font-size: 3rem;
   text-align: center !important;
+  padding-top: 1rem;
 }
 
-.aboutUs-text{
+.aboutUs-text {
   color: var(--color-black) !important;
   font-size: 1rem !important;
   font-weight: 500 !important;
   text-align: justify;
   line-height: 2.5rem !important;
-  padding:0rem 1rem;
-  word-break: break-word!important;
+  padding: 0rem 1rem;
+  word-break: break-word !important;
 }
 
 .aboutUs-text-back {
-  background-color: rgba(255, 255, 255, 0.6); /* Fondo blanco con 80% de opacidad */
+  background-color: rgba(255, 255, 255, 0.6);
+  /* Fondo blanco con 80% de opacidad */
   border-radius: 30px;
   align-items: center;
 }
 
-.homeButtonContainer{
-  display:flex;
+.homeButtonContainer {
+  display: flex;
   align-items: center;
   justify-content: center;
   bottom: 5rem;
@@ -46,12 +53,13 @@
   font-weight: 600;
   background-color: #0C0C0C99;
   border-radius: 30px;
-  padding:1em;
+  padding: 1em;
   border: none;
   outline: none;
   cursor: pointer;
   max-width: fit-content;
-  white-space: nowrap; /* Evita el salto de línea */
+  white-space: nowrap;
+  /* Evita el salto de línea */
 }
 
 .app__aboutus-overlay {
@@ -79,38 +87,46 @@
 
 @media screen and (max-width: 1100px) {
   .app__aboutus-content {
-      flex-direction: column;
+    flex-direction: column;
   }
+
   .homeButton {
-    padding:1rem !important;
-    }
+    padding: 1rem !important;
+  }
 }
 
 @media screen and (max-width: 650px) {
   .aboutUs-text-back {
     padding: 0.5rem;
   }
-  .aboutUs-text{
+
+  .section__padding {
+    padding: 0
+  }
+
+  .aboutUs-text {
     font-size: 17px !important;
     font-weight: 400 !important;
-    letter-spacing: 0px!important;
-    text-align:justify;
+    letter-spacing: 0px !important;
+    text-align: justify;
     line-height: 30px !important;
-    padding:1rem;
-    word-break: break-all!important;
-
+    padding: 1rem;
+    margin: 0px;
   }
+
   .app__aboutUs-h1 {
+    font-family: var(--font-alt);
     font-weight: 450;
     line-height: 20px;
     font-size: 2rem;
     text-align: center !important;
     padding-top: 1rem;
+    white-space: nowrap;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .app__aboutus-content{
+  .app__aboutus-content {
     margin: 0
   }
 }
