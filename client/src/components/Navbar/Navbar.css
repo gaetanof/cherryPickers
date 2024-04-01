@@ -5,6 +5,16 @@
   width: 100% !important;
 }
 
+ul {
+  padding-left: 0rem !important;
+  user-select: none;
+}
+
+li:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
 .section__padding_navbar {
   padding: 1rem;
 }
@@ -81,7 +91,7 @@
   position: absolute;
   top: 0;
   left: 75%;
-  bottom: 40%;
+  bottom: 35%;
   right: 0%;
   padding: 1rem 2rem;
   background: var(--color-white);
@@ -93,7 +103,7 @@
 
 .app__navbar-smallscreen_links {
   list-style: none;
-  padding-top: 6rem;
+  padding-top: 4rem;
 }
 
 .app__navbar-smallscreen_links li {
@@ -112,6 +122,10 @@
 @media screen and (min-width: 1900px) {
   .app__navbar-logo img {
     width: 200px;
+  }
+
+  .app__navbar-smallscreen_overlay {
+    bottom: 55%
   }
 
   .app__navbar-logo {

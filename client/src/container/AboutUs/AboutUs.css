@@ -90,8 +90,22 @@
     flex-direction: column;
   }
 
+  .section__padding_aboutUs {
+    padding-top: 4rem;
+  }
+
   .homeButton {
     padding: 1rem !important;
+  }
+
+  .app__aboutUs-h1 {
+    font-family: var(--font-alt);
+    font-weight: 450;
+    line-height: 20px;
+    font-size: 2rem;
+    text-align: center !important;
+    padding-top: 2rem;
+    white-space: nowrap;
   }
 }
 
@@ -114,15 +128,7 @@
     margin: 0px;
   }
 
-  .app__aboutUs-h1 {
-    font-family: var(--font-alt);
-    font-weight: 450;
-    line-height: 20px;
-    font-size: 2rem;
-    text-align: center !important;
-    padding-top: 1rem;
-    white-space: nowrap;
-  }
+
 }
 
 @media screen and (max-width: 450px) {
