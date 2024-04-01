@@ -10,9 +10,13 @@ ul {
   user-select: none;
 }
 
-li:hover {
+.app__navbar-smallscreen_links li a:hover {
   text-decoration: underline;
   opacity: 0.8;
+  color: white;
+  background-color: black;
+  border-radius: 30px;
+  padding: 1rem
 }
 
 .section__padding_navbar {
