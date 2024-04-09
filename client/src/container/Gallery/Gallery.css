@@ -1,14 +1,17 @@
 .app__gallery {
   flex-direction: row;
-  background: var(--color-black);
-  padding: 0rem 0rem 0rem 6rem;
+  background: linear-gradient(to right, #ffffff, #e0e0e0);
+  /* Gris más oscuro */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  /* Sombra sutil */
+  padding: 0rem 0rem 0rem 3rem;
   border-radius: 30px;
   width: 100%;
 }
 
 .app__Gallery-h1 {
   font-family: var(--font-alt);
-  color: var(--color-white) !important;
+  color: #333333 !important;
   font-weight: 600;
   letter-spacing: 0.03em;
   font-size: 3rem;
@@ -44,6 +47,7 @@
   overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  margin: 1rem
 }
 
 .app__gallery-images_container::-webkit-scrollbar {
@@ -71,6 +75,7 @@
   height: 100%;
   object-fit: cover;
   transition: .5s ease;
+  border-radius: 30px;
 }
 
 .app__gallery-images_arrows {
@@ -94,6 +99,36 @@
 
 .gallery__arrow-icon:hover {
   color: var(--color-white);
+}
+
+.text_styles {
+  color: #333333 !important;
+  font-size: 1.5rem !important;
+  font-weight: 500 !important;
+  text-align: justify;
+  line-height: 2.5rem !important;
+  padding: 2rem 0rem 0rem 0rem;
+}
+
+.logos_container {
+  padding-top: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.airbnb_logo {
+  width: 100px;
+  margin-right: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+}
+
+.booking_logo {
+  width: 95px;
+  margin-left: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  padding: 3px
 }
 
 @media screen and (min-width: 2000px) {

@@ -10,6 +10,8 @@ import fotoGallery1 from '../assets/fotoGallery1.jpg'
 import fotoGallery2 from '../assets/fotoGallery2.jpg'
 import fotoGallery3 from '../assets/fotoGallery3.jpg'
 import fotoGallery4 from '../assets/fotoGallery4.jpg'
+import booking from '../assets/booking.png'
+import airbnb from '../assets/airbnb.png'
 
 
 export default {
@@ -23,5 +25,7 @@ export default {
   fotoGallery1,
   fotoGallery2,
   fotoGallery3,
-  fotoGallery4
+  fotoGallery4,
+  booking,
+  airbnb
 };

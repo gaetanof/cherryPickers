@@ -6,11 +6,10 @@ import './App.css';
 
 const App = () => (
   <div>
-
     <Navbar />
-    <AboutUs />
-    <Services />
     <Gallery />
+    {/* <AboutUs /> */}
+    <Services />
     <FindUs />
     <Footer />
 

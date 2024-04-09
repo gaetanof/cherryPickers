@@ -21,6 +21,20 @@
   padding-top: 1rem;
 }
 
+.aboutUs-text1 {
+  position: relative;
+  left: 0;
+  color: var(--color-black) !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  line-height: 2.5rem !important;
+  padding: 0rem 1rem;
+  word-break: break-word !important;
+  text-align: justify;
+  /* background-color: var(--color-white); */
+  border-radius: 30px;
+}
+
 .aboutUs-text {
   color: var(--color-black) !important;
   font-size: 1rem !important;
@@ -70,12 +84,19 @@
 .app__aboutus-content_history {
   flex: 1;
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
 }
 
 .app__aboutus-content_history p {
   margin: 2rem 0;
+}
+
+.airbnb_logo {
+  width: 90px;
+}
+
+.booking_logo {
+  width: 130px;
 }
 
 @media screen and (min-width: 1800px) {
@@ -120,7 +141,7 @@
 
   .aboutUs-text {
     font-size: 17px !important;
-    font-weight: 400 !important;
+    font-weight: 600 !important;
     letter-spacing: 0px !important;
     text-align: justify;
     line-height: 30px !important;

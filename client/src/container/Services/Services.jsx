@@ -1,6 +1,5 @@
 import React from 'react';
 import './Services.css';
-import images from '../../constants/images';
 import { BsPersonWorkspace } from 'react-icons/bs';
 import { MdOutlineCleaningServices } from 'react-icons/md';
 import { IoCallOutline } from 'react-icons/io5';
@@ -8,6 +7,7 @@ import { TfiAgenda } from 'react-icons/tfi';
 
 const Services = () => (
   <div className="app__bg flex__center section__padding_cards" id="services">
+    <h1 className="app__services-h1">Servicios</h1>
     <div className="container-cards">
       <div className="services-card">
         <BsPersonWorkspace className="services-card-icon" />

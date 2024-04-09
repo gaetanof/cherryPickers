@@ -18,13 +18,18 @@ const Gallery = () => {
   };
 
   return (
-    <div className="app__bg" id="showroom">
+    <div className="app__bg section__padding" id="showroom">
       <div className="app__gallery flex__center">
         <div className="app__gallery-content">
-          <h1 className="app__Gallery-h1">Showroom.</h1>
-          <p className="p__raleway">
-            Estas unidades ya cuentan con nuestro servicio integral.
+          <h1 className="app__Gallery-h1">¿Quienes Somos?</h1>
+          <p className="p__raleway text_styles">
+            Somos una agencia especializada en la gestión integral de alquileres
+            temporales de propiedades en Buenos Aires - Argentina.
           </p>
+          <div className="logos_container">
+            <img className="airbnb_logo" src={images.airbnb} />
+            <img className="booking_logo" src={images.booking} />
+          </div>
         </div>
         <div className="app__gallery-images">
           <div className="app__gallery-images_container" ref={scrollRef}>

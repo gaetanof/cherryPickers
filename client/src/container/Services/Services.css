@@ -21,6 +21,17 @@
   transition: all 400ms ease;
 }
 
+.app__services-h1 {
+  display: flex;
+  font-family: var(--font-alt);
+  color: var(--color-petroleo);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  font-size: 3rem;
+  text-align: center !important;
+  padding-top: 1rem;
+}
+
 .services-card:hover {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
   transform: translateY(-3%);

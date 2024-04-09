@@ -8,6 +8,7 @@
 ul {
   padding-left: 0rem !important;
   user-select: none;
+  list-style: none !important;
 }
 
 .app__navbar-smallscreen_links li a:hover {
@@ -87,15 +88,13 @@ ul {
   font-size: 40px;
   position: absolute;
   top: 4rem;
-  right: 4rem;
+  right: 3rem;
   margin-right: 0.7rem;
 }
 
 .app__navbar-smallscreen_overlay {
   position: absolute;
   top: 0;
-  left: 75%;
-  bottom: 35%;
   right: 0%;
   padding: 1rem 2rem;
   background: var(--color-white);
