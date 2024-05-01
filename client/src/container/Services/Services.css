@@ -1,7 +1,11 @@
+.services_bg {
+  background-color: rgb(223, 223, 223);
+}
+
 .container-cards {
   width: 100%;
   display: flex;
-  max-width: 1200px;
+  justify-self: center;
 }
 
 .section__padding_cards {
@@ -10,12 +14,11 @@
 }
 
 .services-card {
-  width: 100%;
-  margin: 25px;
+  width: 30%;
+  margin: 20px;
   border-radius: 30px;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.8);
-  /* Fondo blanco con 80% de opacidad */
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
   cursor: default;
   transition: all 400ms ease;
@@ -29,7 +32,8 @@
   letter-spacing: 0.03em;
   font-size: 3rem;
   text-align: center !important;
-  padding-top: 1rem;
+  justify-content: center;
+  padding: 2rem;
 }
 
 .services-card:hover {
@@ -60,37 +64,34 @@
 .services-card ul {
   font-family: var(--font-alt);
   font-size: 1rem;
-  padding: 1rem;
+  padding: 20px;
   list-style-type: circle;
+  margin: 0;
 }
 
 .services-card li {
   margin: 0 1rem;
   line-height: 1.5rem;
   word-break: break-word;
-
 }
 
 @media screen and (max-width: 1100px) {
   .container-cards {
     flex-direction: row;
-    /* Cambiar de columna a fila */
     flex-wrap: wrap;
-    /* Permitir que los elementos se envuelvan */
     justify-content: center;
-    /* Centrar los elementos */
   }
 
   .services-card {
     width: 40%;
-    /* Ajustar el ancho para que dos elementos quepan en una fila */
     margin: 20px;
-    /* Espaciado entre los elementos */
+  }
+
+  .app__services-h1 {
+    font-size: 40px;
+    font-weight: 300;
   }
 }
-
-
-
 
 @media screen and (max-width: 650px) {
   .container-cards {
@@ -101,6 +102,10 @@
   .services-card {
     width: 70%;
     margin: 30px auto;
+  }
+
+  .app__services-h1 {
+    font-size: 35px;
   }
 
 }

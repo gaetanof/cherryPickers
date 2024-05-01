@@ -6,8 +6,8 @@ import { IoCallOutline } from 'react-icons/io5';
 import { TfiAgenda } from 'react-icons/tfi';
 
 const Services = () => (
-  <div className="app__bg flex__center section__padding_cards" id="services">
-    <h1 className="app__services-h1">Servicios</h1>
+  <div className="services_bg section__padding_cards" id="services">
+    <h1 className="app__services-h1">¿En que nos especializamos?</h1>
     <div className="container-cards">
       <div className="services-card">
         <BsPersonWorkspace className="services-card-icon" />

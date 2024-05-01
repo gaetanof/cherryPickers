@@ -1,159 +1,62 @@
-.app__aboutus {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  /* Ocupa el 100% de la altura de la ventana */
-  width: 100%;
-}
-
-.section__padding_aboutUs {
-  padding-top: 2rem;
-}
-
-.app__aboutUs-h1 {
-  font-family: var(--font-alt);
-  color: var(--color-petroleo);
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  font-size: 3rem;
-  text-align: center !important;
-  padding-top: 1rem;
-}
-
-.aboutUs-text1 {
-  position: relative;
-  left: 0;
-  color: var(--color-black) !important;
-  font-size: 1.5rem !important;
-  font-weight: 600 !important;
-  line-height: 2.5rem !important;
-  padding: 0rem 1rem;
-  word-break: break-word !important;
-  text-align: justify;
-  /* background-color: var(--color-white); */
-  border-radius: 30px;
-}
-
-.aboutUs-text {
-  color: var(--color-black) !important;
-  font-size: 1rem !important;
-  font-weight: 500 !important;
-  text-align: justify;
-  line-height: 2.5rem !important;
-  padding: 0rem 1rem;
-  word-break: break-word !important;
-}
-
-.aboutUs-text-back {
-  background-color: rgba(255, 255, 255, 0.6);
-  /* Fondo blanco con 80% de opacidad */
-  border-radius: 30px;
-  align-items: center;
-}
-
-.homeButtonContainer {
+.about-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  bottom: 5rem;
-  padding: 1rem
+  background-color: rgb(30, 30, 30);
+  /* Color de fondo */
+  color: #fff;
+  /* Color del texto */
+  font-family: 'Arial', sans-serif;
+  /* Tipo de letra, cambia a tu preferencia */
+  padding: 50px;
+  /* Padding considerable */
 }
 
-.homeButton {
-  font-family: var(--font-base);
-  color: var(--color-white);
-  font-size: 1rem;
-  font-weight: 600;
-  background-color: #0C0C0C99;
-  border-radius: 30px;
-  padding: 1em;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  max-width: fit-content;
-  white-space: nowrap;
-  /* Evita el salto de línea */
+.about-text {
+  flex-basis: 40%;
+  text-align: justify;
+  font-size: 1.5rem;
+  max-width: 40%;
 }
 
-.app__aboutus-overlay {
-  position: absolute;
-  inset: 0;
-}
-
-.app__aboutus-content_history {
-  flex: 1;
+.about-image {
+  flex-basis: 50%;
+  /* Ocupa el 50% del contenedor */
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+  /* Agrega distancia entre la foto y el texto */
 }
 
-.app__aboutus-content_history p {
-  margin: 2rem 0;
+img {
+  width: 400px;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
 }
 
-.airbnb_logo {
-  width: 90px;
-}
-
-.booking_logo {
-  width: 130px;
-}
-
-@media screen and (min-width: 1800px) {
-  .aboutUs-text-back {
-    margin: 0;
-    border-radius: 30px;
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .app__aboutus-content {
+@media (max-width: 768px) {
+  .about-container {
     flex-direction: column;
   }
 
-  .section__padding_aboutUs {
-    padding-top: 4rem;
+  .about-text {
+    flex-basis: 100%;
+    max-width: 100%;
+    font-size: 20px;
+    margin-bottom: 20px;
+    white-space: pre-wrap;
   }
 
-  .homeButton {
-    padding: 1rem !important;
-  }
-
-  .app__aboutUs-h1 {
-    font-family: var(--font-alt);
-    font-weight: 450;
-    line-height: 20px;
-    font-size: 2rem;
-    text-align: center !important;
-    padding-top: 2rem;
-    white-space: nowrap;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  .aboutUs-text-back {
-    padding: 0.5rem;
-  }
-
-  .section__padding {
-    padding: 0
-  }
-
-  .aboutUs-text {
-    font-size: 17px !important;
-    font-weight: 600 !important;
-    letter-spacing: 0px !important;
-    text-align: justify;
-    line-height: 30px !important;
-    padding: 1rem;
-    margin: 0px;
+  .about-image {
+    flex-basis: 100%;
+    margin-left: 0;
   }
 
 
-}
-
-@media screen and (max-width: 450px) {
-  .app__aboutus-content {
-    margin: 0
+  img {
+    width: 300px;
+    height: 300px;
   }
 }

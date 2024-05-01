@@ -3,9 +3,9 @@ import { FiInstagram } from 'react-icons/fi';
 import './Footer.css';
 
 const Footer = () => (
-  <footer className="app__bg section__padding_footer" id="footer">
+  <footer className="app__footer-bg section__padding_footer" id="footer">
     <div className="app__footer-links_icons">
-      <p>Seguinos en Instagram</p>
+      <p className="footer_igCta">Seguinos en Instagram</p>
       <a href="https://www.instagram.com/_cherrypickers?igsh=MWtrbHlsajAwZGxwbg==">
         <FiInstagram />
       </a>
