@@ -49,31 +49,7 @@
   white-space: pre-wrap;
   margin-right: 40px;
   align-self: start;
-  text-shadow:
-    -1px -1px 0 rgba(85, 85, 85, 0.5),
-    1px -1px 0 rgba(85, 85, 85, 0.5),
-    -1px 1px 0 rgba(85, 85, 85, 0.5),
-    1px 1px 0 rgba(85, 85, 85, 0.5);
 }
-
-.app__navbar-h2 {
-  font-family: var(--font-alt);
-  color: var(--color-white);
-  font-size: 45px;
-  font-weight: 400;
-  align-self: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  white-space: pre-wrap;
-  text-shadow:
-    -1px -1px 0 rgba(85, 85, 85, 0.5),
-    1px -1px 0 rgba(85, 85, 85, 0.5),
-    -1px 1px 0 rgba(85, 85, 85, 0.5),
-    1px 1px 0 rgba(85, 85, 85, 0.5);
-}
-
 
 .btn-danger-intern {
   position: absolute !important;
@@ -90,7 +66,6 @@
   align-items: center;
   justify-content: center;
 }
-
 
 .btn-danger-intern:hover {
   background-color: red !important;
@@ -159,7 +134,7 @@
   margin-top: 30px;
 }
 
-.app__findUs-h1 {
+.app__findUs-cat {
   font-family: var(--font-alt);
   color: var(--color-petroleo);
   font-weight: 1000;
@@ -167,6 +142,19 @@
   font-size: 1rem;
   margin: 10px;
   white-space: nowrap;
+}
+
+.findUs-logos {
+  position: absolute;
+  left: 0px;
+  margin: 1rem;
+  padding: 5rem
+}
+
+img {
+  width: 115px !important;
+  height: 100px !important;
+  margin: 1rem;
 }
 
 .file-upload-button {
@@ -269,7 +257,8 @@
   }
 
   .findUs-sendImgContainer {
-    width: 100%;
+    width: 80% !important;
+    margin-top: 2rem;
   }
 
   .swal2-popup {
@@ -278,14 +267,21 @@
   }
 
   .findUs-title {
+    line-height: 40px;
     margin: 0;
     padding: 0px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     font-size: 40px;
     font-weight: 300;
     align-self: center;
     white-space: wrap;
     width: 100%;
+  }
+
+  .findUs-logos {
+    position: relative;
+    padding: 0rem;
+    margin: 0rem
   }
 }
 
@@ -328,6 +324,7 @@
   .add-photo-button {
     position: absolute;
     left: 100%;
+    margin-left: 10px;
   }
 
   .findUs-form_button_container {

@@ -12,7 +12,11 @@ const AboutUs = () => {
         </p>
       </div>
       <div className="about-image">
-        <img src={images.fotoGallery2} alt="Interior de una casa" />
+        <img
+          className="about-image-size"
+          src={images.fotoGallery2}
+          alt="Interior de una casa"
+        />
       </div>
     </div>
   );

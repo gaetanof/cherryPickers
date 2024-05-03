@@ -12,7 +12,7 @@ const Footer = () => (
     </div>
     <div className="footer__copyright">
       <p className="footer_copyright_paragraph">
-        2024 CHERRY PICKERS. All Rights reserved.
+        2024 CHERRY PICKERS. All rights reserved.
       </p>
     </div>
   </footer>

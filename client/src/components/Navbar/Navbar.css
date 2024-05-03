@@ -51,37 +51,27 @@ ul {
 .app__navbar-h1 {
   font-family: var(--font-base);
   color: var(--color-white);
-  font-weight: 1000;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
   font-size: 2rem;
   flex: 1;
   text-align: left;
   z-index: 1;
   white-space: nowrap;
-  margin: 4rem;
-  text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+  margin: 2rem 4rem 4rem 4rem;
 }
 
 .app__navbar-h2 {
   font-family: var(--font-alt);
   color: var(--color-white);
-  font-size: 45px;
+  font-size: 50px;
   font-weight: 400;
   align-self: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  white-space: pre-wrap;
-  text-shadow:
-    -1px -1px 0 rgba(85, 85, 85, 0.5),
-    1px -1px 0 rgba(85, 85, 85, 0.5),
-    -1px 1px 0 rgba(85, 85, 85, 0.5),
-    1px 1px 0 rgba(85, 85, 85, 0.5);
+  white-space: nowrap;
 }
 
 
@@ -112,10 +102,10 @@ ul {
 .homeMenu {
   color: var(--color-white);
   font-size: 40px;
-  margin: 4rem;
+  margin: 2rem 4rem 4rem 4rem;
   cursor: pointer;
   position: absolute;
-  top: 0px;
+  top: 10px;
   right: 0px;
 }
 
@@ -155,11 +145,11 @@ ul {
 .app__navbar-smallscreen_links a {
   text-decoration: none !important;
   display: block;
-  margin-top: 4rem;
+  margin-top: 5rem;
   cursor: pointer;
   color: var(--color-black);
-  font-size: 1rem;
-  text-align: center;
+  font-size: 1.5rem;
+  text-align: left;
   font-family: var(--font-alt);
 }
 
@@ -181,7 +171,7 @@ ul {
   }
 
   .app__navbar-h2 {
-    font-size: 30px;
+    font-size: 35px;
     padding-bottom: 55px;
     white-space: nowrap;
   }
@@ -211,8 +201,12 @@ ul {
   }
 
   .app__navbar-h2 {
-    font-size: 22px;
     padding-bottom: 50px;
+    white-space: nowrap;
+    width: 100%;
+    white-space: pre-wrap;
+    align-self: center;
+    margin-left: 15%;
   }
 
   .app__navbar-h1 {

@@ -7,6 +7,7 @@ import Select from 'react-select';
 import { selectStyles } from './selectStyles';
 import { MdOutlineAddAPhoto } from 'react-icons/md';
 import Swal from 'sweetalert2';
+import { images } from '../../constants';
 
 function FindUs() {
   const [nombreCompleto, setNombreCompleto] = useState('');
@@ -262,6 +263,10 @@ function FindUs() {
           <h2 className="findUs-title">
             Alquilá tu propiedad de forma rápida y sencilla.
           </h2>
+          <div className="findUs-logos">
+            <img src={images.booking} alt="booking logo" />
+            <img src={images.airbnb} alt="airbnb logo" />
+          </div>
           <form
             className="findUs-form form_container"
             onSubmit={(e) => handleSubmit(e)}
@@ -348,7 +353,7 @@ function FindUs() {
             </div>
             <div className="findUs-sendImgContainer">
               <div className="add-photo-container">
-                <h1 className="app__findUs-h1">Mostranos tu unidad:</h1>
+                <p className="app__findUs-cat">Mostranos tu unidad:</p>
                 <MdOutlineAddAPhoto
                   className="add-photo-button"
                   onClick={() => document.getElementById('fileInput').click()}
@@ -365,7 +370,7 @@ function FindUs() {
               </div>
               <div className="photo-grid">
                 {fotos.map((foto) => (
-                  <div key={foto.index}>
+                  <div className="photo-container-size" key={foto.index}>
                     <div className="content_img">
                       <button
                         className="btn-danger btn-danger-intern"

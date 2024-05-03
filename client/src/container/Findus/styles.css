@@ -40,27 +40,37 @@ td {
 .content_img {
   position: relative;
   width: 100%;
+  /* Adjust width as necessary */
   height: auto;
   background-color: transparent;
   border: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+}
+
+
+.photo-container-size {
+  width: 100%;
 }
 
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
   gap: 0.5rem;
+  margin-top: 2rem;
 }
 
 .img-responsive {
   flex: 0 0 auto;
   margin: 5px;
-  height: 10rem;
-  width: 10rem;
+  height: 10rem !important;
+  width: 10rem !important;
   object-fit: cover;
+  align-self: center;
 }
 
 .cursor-pointer {
