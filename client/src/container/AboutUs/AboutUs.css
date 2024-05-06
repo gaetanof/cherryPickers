@@ -48,9 +48,8 @@
   .about-text {
     flex-basis: 100%;
     max-width: 100%;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 20px;
-    white-space: pre-wrap;
   }
 
   .about-image {

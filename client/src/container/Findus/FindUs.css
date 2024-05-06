@@ -117,11 +117,10 @@
   font-family: var(--font-alt);
   color: var(--color-black);
   font-size: 1rem;
-  font-weight: 1000;
-  /* background-color: #7B2EFF; */
-  background-color: rgba(60, 70, 255);
-  border-radius: 25px;
-  padding: 1em;
+  font-weight: 700;
+  background-color: var(--color-white);
+  border-radius: 30px;
+  padding: 10px 20px;
   border: none;
   outline: none;
   cursor: pointer;
