@@ -109,27 +109,30 @@
 }
 
 .findUs-form_button_container {
-  position: relative;
   right: 0%;
   top: 100%;
 }
 
 .findUs-form button {
-  font-family: var(--font-base);
-  color: var(--color-white);
+  font-family: var(--font-alt);
+  color: var(--color-black);
   font-size: 1rem;
-  font-weight: 600;
-  background-color: #0C0C0C99;
-  border-radius: 30px;
+  font-weight: 1000;
+  /* background-color: #7B2EFF; */
+  background-color: rgba(60, 70, 255);
+  border-radius: 25px;
   padding: 1em;
   border: none;
   outline: none;
   cursor: pointer;
   max-width: fit-content;
   white-space: nowrap;
-  position: absolute;
-  left: 55%;
-  bottom: 5.5rem;
+  position: static;
+  /* Anula la posición absoluta */
+  width: auto;
+  /* Define cualquier otra propiedad necesaria */
+  height: auto;
+  margin-top: 20px;
 }
 
 .app__findUs-cat {
