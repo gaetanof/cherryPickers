@@ -1,11 +1,18 @@
 .app__footer-links_icons {
   display: flex;
   justify-content: center;
-  align-items: left;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer_contact_method {
+  display: flex;
+  flex-direction: row;
 }
 
 .section__padding_footer {
   padding: 0;
+  height: auto;
 }
 
 .app__footer-links_icons svg {
@@ -21,11 +28,16 @@
 }
 
 .footer__copyright {
-  margin-top: 3rem;
   font-family: var(--font-base);
   color: rgb(223, 223, 223);
   white-space: nowrap;
-  margin: 0px;
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: flex-start;
+  /* Alinea el contenido a la izquierda */
+  align-items: flex-start;
+  flex-direction: row;
+  width: 100%;
 }
 
 .footer_copyright_paragraph {

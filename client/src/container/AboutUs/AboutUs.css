@@ -24,6 +24,9 @@
 }
 
 .about-image {
+  object-fit: fill;
+  width: 400px !important;
+  height: 400px !important;
   flex-basis: 50%;
   /* Ocupa el 50% del contenedor */
   display: flex;
@@ -34,7 +37,7 @@
 }
 
 .about-image-size {
-  width: 400px !important;
+  width: auto !important;
   height: 400px !important;
   justify-content: center;
   align-items: center;
@@ -58,7 +61,7 @@
   }
 
   .about-image-size {
-    width: 300px !important;
+    width: auto !important;
     height: 300px !important;
   }
 }
