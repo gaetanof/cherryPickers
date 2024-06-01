@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --font-base: 'Fraunces', serif;
   --font-alt: 'Raleway', sans-serif;
   --color-softbrown: #DBA656;
-  --color-brown:#9D7B46;
+  --color-brown: #9D7B46;
   --color-black: #0C0C0C;
   --color-petroleo: #213132;
   --color-crimson: #F5EFDB;
-  --color-grey: linear-gradient(rgba(170, 170, 170, 0.4), rgba(255, 255, 255, 0.7)); /* Cambiar el valor alfa según sea necesario */
+  --color-grey: linear-gradient(rgba(170, 170, 170, 0.4), rgba(255, 255, 255, 0.7));
+  /* Cambiar el valor alfa según sea necesario */
   --color-white: #FFFFFF;
 }
 
@@ -25,27 +27,29 @@ a {
 
 .slide-bottom {
   -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @-webkit-keyframes slide-bottom {
   0% {
     -webkit-transform: translateY(-25%);
-            transform: translateY(-25%);
+    transform: translateY(-25%);
   }
+
   100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
 @keyframes slide-bottom {
   0% {
-    -webkit-transform: translateY(-25%);
-            transform: translateY(-25%);
+    -webkit-transform: translateY(-26%);
+    transform: translateY(-25%);
   }
+
   100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
